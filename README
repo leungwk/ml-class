@@ -3,5 +3,8 @@
 Assignments for ml-class using python (numpy, scipy) rather than
 octave. Intended to run in a python shell through python-mode.
 
-Currently linear regression, logistic regression (but not multiclass
-using OvA), and a neural net have been implemented.
+Currently I have implemented
+- linear regression
+- logistic regression (but not multiclass using OvA)
+- a neural net
+- learning curves (train, cv, test sets) for training set size and lambda
