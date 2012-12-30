@@ -91,6 +91,22 @@ def plot_Cs(X,y):
         ax.set_title("C = {0}".format(C))
     plt.show()
 
-plot_svm(preprocessing.scale(X),y) # C=1, gamma=30
+#plot_svm(preprocessing.scale(X),y) # C=1, gamma=30
 # plot_Cs(preprocessing.scale(X),y)
 
+
+# def cv_svm(X, y):
+#     params = {'C': [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30],
+#               'gamma': [0.01, 0.03, 0.1, 0.3, 1, 3, 10, 30]}
+#     svc = svm.SVC()
+#     clf = grid_search.GridSearchCV(svc, params)
+#     res = clf.fit(X, np.ravel(y))
+#     best = res.best_estimator_
+#     return best
+
+data = spio.loadmat("../data/ex6/ex6data3.mat")
+X = data['X']
+y = data['y']
+Xval = data['Xval']
+yval = data['yval']
+plot_svm(preprocessing.scale(X),y)
