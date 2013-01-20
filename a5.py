@@ -31,7 +31,7 @@ def normalize(X):
         uxs = np.mean(xs)
         sxs = np.std(xs)
         ms.append((uxs,sxs)) # not a good idea, because it is easy to switches indicies, and it would not give a type error (should use a named tuple or dict)
-        X[:,i] = (xs -uxs)/sxs if sxs != 0 else xs
+        X[:,i] = (xs -uxs)/sxs if sxs != 0 else xs # warning: will modify the input X
     ms = np.matrix(ms)
     return X,ms
 

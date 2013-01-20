@@ -9,6 +9,7 @@ Currently I have implemented from scratch
 - a neural net
 - learning curves (train, cv, test sets) for training set size and lambda
 - k-means
+- PCA
 
 I have used sklearn's ML algorithms for
 - svm
