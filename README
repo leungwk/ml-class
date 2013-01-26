@@ -10,6 +10,7 @@ Currently I have implemented from scratch
 - learning curves (train, cv, test sets) for training set size and lambda
 - k-means
 - PCA
+- anomaly detection
 
 I have used sklearn's ML algorithms for
 - svm
