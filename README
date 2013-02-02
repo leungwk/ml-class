@@ -11,6 +11,7 @@ Currently I have implemented from scratch
 - k-means
 - PCA
 - anomaly detection
+- collaborative filtering
 
 I have used sklearn's ML algorithms for
 - svm
