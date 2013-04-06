@@ -1,0 +1,3310 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>lecnotes</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-04-05 21:31:53 EDT"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript" src="js/org-info.js"></script>
+<script type="text/javascript" >
+<!--/*--><![CDATA[/*><!--*/
+org_html_manager.set("TOC_DEPTH", "3");
+org_html_manager.set("LINK_HOME", "");
+org_html_manager.set("LINK_UP", "");
+org_html_manager.set("LOCAL_TOC", "0");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("TOC", "1");
+org_html_manager.set("VIEW", "showall");
+org_html_manager.setup();  // activate after the parameters are set
+/*]]>*///-->
+</script>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+<script type="text/javascript" src="http://orgmode.org/mathjax/MathJax.js">
+<!--/*--><![CDATA[/*><!--*/
+    MathJax.Hub.Config({
+        // Only one of the two following lines, depending on user settings
+        // First allows browser-native MathML display, second forces HTML/CSS
+        //  config: ["MMLorHTML.js"], jax: ["input/TeX"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+        extensions: ["tex2jax.js","TeX/AMSmath.js","TeX/AMSsymbols.js",
+                     "TeX/noUndefined.js"],
+        tex2jax: {
+            inlineMath: [ ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            skipTags: ["script","noscript","style","textarea","pre","code"],
+            ignoreClass: "tex2jax_ignore",
+            processEscapes: false,
+            processEnvironments: true,
+            preview: "TeX"
+        },
+        showProcessingMessages: true,
+        displayAlign: "center",
+        displayIndent: "2em",
+
+        "HTML-CSS": {
+             scale: 100,
+             availableFonts: ["STIX","TeX"],
+             preferredFont: "TeX",
+             webFont: "TeX",
+             imageFont: "TeX",
+             showMathMenu: true,
+        },
+        MMLorHTML: {
+             prefer: {
+                 MSIE:    "MML",
+                 Firefox: "MML",
+                 Opera:   "HTML",
+                 other:   "HTML"
+             }
+        }
+    });
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">lecnotes</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 about </a></li>
+<li><a href="#sec-2">2 notation </a></li>
+<li><a href="#sec-3">3 linear regression </a>
+<ul>
+<li><a href="#sec-3_1">3.1 cost function </a></li>
+<li><a href="#sec-3_2">3.2 gradient descent </a></li>
+<li><a href="#sec-3_3">3.3 gradient descent for linear regression </a></li>
+<li><a href="#sec-3_4">3.4 extensions </a></li>
+<li><a href="#sec-3_5">3.5 multivariate linear regression (multiple features) </a></li>
+<li><a href="#sec-3_6">3.6 feature scaling and mean normalization (ie. standarization) </a></li>
+<li><a href="#sec-3_7">3.7 learning rate </a></li>
+<li><a href="#sec-3_8">3.8 polynomial regression </a></li>
+<li><a href="#sec-3_9">3.9 normal equation </a></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 logistic regression </a>
+<ul>
+<li><a href="#sec-4_1">4.1 motivation </a></li>
+<li><a href="#sec-4_2">4.2 hypothesis representation </a></li>
+<li><a href="#sec-4_3">4.3 decision boundary </a></li>
+<li><a href="#sec-4_4">4.4 cost function </a></li>
+<li><a href="#sec-4_5">4.5 multiclass classification </a></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 regularization </a>
+<ul>
+<li><a href="#sec-5_1">5.1 cost function </a></li>
+<li><a href="#sec-5_2">5.2 regularized linear regression </a></li>
+<li><a href="#sec-5_3">5.3 regularized logistic regression </a></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 neural networks: representation </a>
+<ul>
+<li><a href="#sec-6_1">6.1 non-linear classification </a></li>
+<li><a href="#sec-6_2">6.2 neurons and the brain </a></li>
+<li><a href="#sec-6_3">6.3 model representation </a>
+<ul>
+<li><a href="#sec-6_3_1">6.3.1 forward propagation </a></li>
+<li><a href="#sec-6_3_2">6.3.2 examples </a></li>
+</ul>
+</li>
+<li><a href="#sec-6_4">6.4 multiclass classification </a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 neural networks: learning </a>
+<ul>
+<li><a href="#sec-7_1">7.1 cost function </a></li>
+<li><a href="#sec-7_2">7.2 backpropagation </a></li>
+<li><a href="#sec-7_3">7.3 gradient checking </a></li>
+<li><a href="#sec-7_4">7.4 random intialization </a></li>
+<li><a href="#sec-7_5">7.5 putting it all together </a></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 advice for applying machine learning </a>
+<ul>
+<li><a href="#sec-8_1">8.1 deciding what to try next </a></li>
+<li><a href="#sec-8_2">8.2 evaluating a hypothesis </a></li>
+<li><a href="#sec-8_3">8.3 model selection and training/validation/test sets </a></li>
+<li><a href="#sec-8_4">8.4 diagnosing bias vs. variance </a></li>
+<li><a href="#sec-8_5">8.5 regularization and bias/variance </a></li>
+<li><a href="#sec-8_6">8.6 learning curves </a></li>
+<li><a href="#sec-8_7">8.7 deciding what to do next revisited </a></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 machine learning system design </a>
+<ul>
+<li><a href="#sec-9_1">9.1 prioritizing what to work on: spam classification example </a></li>
+<li><a href="#sec-9_2">9.2 error analysis </a></li>
+<li><a href="#sec-9_3">9.3 error metrics for skewed classes </a></li>
+<li><a href="#sec-9_4">9.4 trading off precision and recall </a></li>
+<li><a href="#sec-9_5">9.5 data for machine learning </a>
+<ul>
+<li><a href="#sec-9_5_1">9.5.1 The large data rationale </a></li>
+</ul>
+</li>
+<li><a href="#sec-9_6">9.6 terminology </a></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 SVM </a>
+<ul>
+<li><a href="#sec-10_1">10.1 optimization objective </a></li>
+<li><a href="#sec-10_2">10.2 large margin intuition </a></li>
+<li><a href="#sec-10_3">10.3 mathematics behind large margin classification </a></li>
+<li><a href="#sec-10_4">10.4 kernels I </a></li>
+<li><a href="#sec-10_5">10.5 kernels II </a></li>
+<li><a href="#sec-10_6">10.6 using a SVM </a>
+<ul>
+<li><a href="#sec-10_6_1">10.6.1 when to use SVM over logistic regression </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-11">11 clustering </a>
+<ul>
+<li><a href="#sec-11_1">11.1 unsupervised learning - introduction </a></li>
+<li><a href="#sec-11_2">11.2 k-means </a></li>
+<li><a href="#sec-11_3">11.3 optimization objective </a></li>
+<li><a href="#sec-11_4">11.4 random initialization </a></li>
+<li><a href="#sec-11_5">11.5 choosing the number of clusters </a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12 dimensionality reduction </a>
+<ul>
+<li><a href="#sec-12_1">12.1 motivation </a></li>
+<li><a href="#sec-12_2">12.2 PCA: problem formulation </a></li>
+<li><a href="#sec-12_3">12.3 PCA: algorithm </a></li>
+<li><a href="#sec-12_4">12.4 Choosing the number of principle components </a></li>
+<li><a href="#sec-12_5">12.5 Reconstruction from compressed representations </a></li>
+<li><a href="#sec-12_6">12.6 Advice for applying PCA </a></li>
+</ul>
+</li>
+<li><a href="#sec-13">13 anomaly detection </a>
+<ul>
+<li><a href="#sec-13_1">13.1 problem motivation </a></li>
+<li><a href="#sec-13_2">13.2 algorithm </a></li>
+<li><a href="#sec-13_3">13.3 developing and evaluating an anomaly detection system </a></li>
+<li><a href="#sec-13_4">13.4 anomaly detection vs. supervised learning </a></li>
+<li><a href="#sec-13_5">13.5 choosing what features to use </a>
+<ul>
+<li><a href="#sec-13_5_1">13.5.1 error analysis </a></li>
+</ul>
+</li>
+<li><a href="#sec-13_6">13.6 multivariate Gaussian distribution </a></li>
+<li><a href="#sec-13_7">13.7 applying multivariate Gaussian distribution to anomaly detection </a></li>
+</ul>
+</li>
+<li><a href="#sec-14">14 recommender systems </a>
+<ul>
+<li><a href="#sec-14_1">14.1 problem formulation </a></li>
+<li><a href="#sec-14_2">14.2 content-based recommendations </a></li>
+<li><a href="#sec-14_3">14.3 collaborative filtering </a></li>
+<li><a href="#sec-14_4">14.4 collaborative filtering algorithm </a></li>
+<li><a href="#sec-14_5">14.5 vectorization: low rank matrix factorization </a></li>
+<li><a href="#sec-14_6">14.6 implementation detail: mean normalization </a></li>
+</ul>
+</li>
+<li><a href="#sec-15">15 large-scale machine learning </a>
+<ul>
+<li><a href="#sec-15_1">15.1 learning with large datasets </a></li>
+<li><a href="#sec-15_2">15.2 stochastic gradient descent </a></li>
+<li><a href="#sec-15_3">15.3 mini-batch gradient descent </a></li>
+<li><a href="#sec-15_4">15.4 stochastic gradient descent convergence </a></li>
+<li><a href="#sec-15_5">15.5 online learning </a></li>
+<li><a href="#sec-15_6">15.6 map/reduce and data parallelism </a></li>
+</ul>
+</li>
+<li><a href="#sec-16">16 application example: photo OCR </a>
+<ul>
+<li><a href="#sec-16_1">16.1 problem description and pipeline </a></li>
+<li><a href="#sec-16_2">16.2 sliding windows </a></li>
+<li><a href="#sec-16_3">16.3 getting lots of data: artificial data synthesis </a></li>
+<li><a href="#sec-16_4">16.4 ceiling analysis: what part of the pipeline to work on next </a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> about </h2>
+<div class="outline-text-2" id="text-1">
+
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> notation </h2>
+<div class="outline-text-2" id="text-2">
+
+
+<ul>
+<li>
+\(m\), \(n\): number of training examples
+</li>
+<li>
+\(x\)'s: input variables or features
+</li>
+<li>
+\(y\)'s: output variable or "target" variables
+</li>
+<li>
+\(x^{(i)}\): input features of i<sup>th</sup> training example
+</li>
+<li>
+\(x_j^{(i)}\): value of feature \(j\) in i<sup>th</sup> training example
+</li>
+<li>
+\((x,y)\): one training example
+</li>
+<li>
+\((x^{(i)}, y^{(i)})\): specific example (i<sup>th</sup> training example)
+</li>
+<li>
+\(h\): hypothesis (maps \(x\)'s from \(y\)'s)
+</li>
+<li>
+\(\theta_i\): parameters
+</li>
+<li>
+\(h_{\theta}(x) = p(y=1|x;\theta)\) read as probability that y=1 given x
+parameterized by &theta;.
+</li>
+</ul>
+
+
+<p>
+neural nets
+</p><ul>
+<li>
+\(a_i^{(j)}\): activation of unit i in layer j
+</li>
+<li>
+\(\Theta^{(j)}\): matrix of weights controlling function mapping from
+layer j to j+1.
+</li>
+<li>
+\(\delta_j^{(l)}\) is the error of node j in layer l
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> linear regression </h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+supervised: given the "right answer" for each example in the data
+</p>
+<p>
+regression: predict real-valued output
+</p>
+
+</div>
+
+<div id="outline-container-3_1" class="outline-3">
+<h3 id="sec-3_1"><span class="section-number-3">3.1</span> cost function </h3>
+<div class="outline-text-3" id="text-3_1">
+
+
+<p>
+Given a hypothesis \(h_{\theta}(x) = h(x) = \theta_0 +\theta_1x\), we want
+to minimize the cost function \(J(\theta)\)
+\[
+\min_{\theta_0,\theta_1}
+    J(\theta_0,\theta_1) = \tfrac{1}{2m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) -y^{(i)})^2
+\]
+
+\(h_{\theta}(x)\) for fixed \(\theta\) is a function of \(x\). Meanwhile,
+\(J(\theta)\) is a function of the parameter \(\theta\). The relation
+between the two is that shifts in the parameters for \(h_{\theta}(x)\)
+draws different curves, while for \(J(\theta)\) it draws different points
+(a locus?).
+</p>
+
+<div class="figure">
+<p><img src="img/hypothesis_vs_cost_function.png" width="50%" height="50%" alt="img/hypothesis_vs_cost_function.png" /></p>
+<p>Different hypothesis curves for various $&theta;$, but different cost function <em>points</em> for various $&theta;$.</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-3_2" class="outline-3">
+<h3 id="sec-3_2"><span class="section-number-3">3.2</span> gradient descent </h3>
+<div class="outline-text-3" id="text-3_2">
+
+
+<p>
+repeat until convergence
+\[
+  \theta_j := \theta_j -\alpha\frac{\partial}{\partial \theta_j} J(\theta)
+\]
+for \(j=0,1,...\) simulatenously updated
+(ie. temp0 := &theta;<sub>0</sub> …, temp1 := &theta;<sub>1</sub> …, then &theta;<sub>0</sub> := temp0, &theta;<sub>1</sub> := temp1).
+</p>
+<p>
+As it approaches a local minimum, gradient descent will automatically
+take smaller steps. So one need not decrease &alpha; over time.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3_3" class="outline-3">
+<h3 id="sec-3_3"><span class="section-number-3">3.3</span> gradient descent for linear regression </h3>
+<div class="outline-text-3" id="text-3_3">
+
+
+<p>
+for linear regression, the cost function is a convex function (so there
+is always a single optima).
+</p>
+<p>
+"batch" (use all training examples)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3_4" class="outline-3">
+<h3 id="sec-3_4"><span class="section-number-3">3.4</span> extensions </h3>
+<div class="outline-text-3" id="text-3_4">
+
+
+<ul>
+<li>
+can solve for linreg exactly
+</li>
+<li>
+learn with larger number of features (input vars)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3_5" class="outline-3">
+<h3 id="sec-3_5"><span class="section-number-3">3.5</span> multivariate linear regression (multiple features) </h3>
+<div class="outline-text-3" id="text-3_5">
+
+
+<p>
+\(h_{\theta}(x) = \theta_0 +\theta_1 x_1 + \dots +\theta_n x_n\).
+To simplify notation, define \(x_0 = 1\), then the hypothesis 
+\(h_{\theta}(x) = \theta^T x\) (&theta; and x are by default n+1 dim column vectors).
+The cost function \(J(\theta) = \tfrac{1}{2m}\sum_{i=1}^m (h_{\theta}(x^{(i)}) -y^{(i)})^2\).
+</p>
+<p>
+gradient descent on this new cost function is, for n \geq 1: repeat:
+\[
+    \theta_j := \theta_j -\alpha\cdot\frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) -y^{(i)})x_j^{(i)}
+\]
+and simulatenouly update &theta;<sub>j</sub> for \(j=0,\dots,n\).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3_6" class="outline-3">
+<h3 id="sec-3_6"><span class="section-number-3">3.6</span> feature scaling and mean normalization (ie. standarization) </h3>
+<div class="outline-text-3" id="text-3_6">
+
+
+<p>
+make sure features are on a similar scale (to make gradient descent
+converge more quickly).
+</p>
+<p>
+ex. x<sub>1</sub> = size (0-2000 sq ft), x<sub>2</sub> = number of bedrooms (1-5),
+change into,
+x<sub>1</sub> = size/2000, x<sub>2</sub> = num bedrooms/5
+</p>
+<p>
+make the contours more circular?
+</p>
+
+<div class="figure">
+<p><img src="img/feature_scailing_-_unscaled_vs_scaled.png"  alt="img/feature_scailing_-_unscaled_vs_scaled.png" /></p>
+<p>Unscaled vs. scaled feature (less eccentric circular contours)</p>
+</div>
+
+<p>
+more generally, get every feature into an approximately -1 \leq x<sub>i</sub> \leq
+1 range.
+</p>
+<p>
+Some people also do more mean normalization by replacing \(x_i\) with \(x_i
+-\mu_i\) to make features have approximate zero mean (does not apply to
+\(x_0 = 1\))
+ex. x<sub>1</sub> = (size-1000)/2000, x<sub>2</sub> = (num bedrooms-2)/5
+</p>
+<p>
+more formally, we are <em>standarizing</em> the feature by doing x<sub>1</sub> &lt;- (x<sub>1</sub>
+-&mu;<sub>1</sub>)/s<sub>1</sub>, where s<sub>1</sub> is the standard deviation (so "standarization"
+means "feature scailing" and "mean normalization").
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3_7" class="outline-3">
+<h3 id="sec-3_7"><span class="section-number-3">3.7</span> learning rate </h3>
+<div class="outline-text-3" id="text-3_7">
+
+
+<p>
+how to make sure gradient descent is working, and choosing &alpha;.
+</p>
+<p>
+\(J(\theta)\) should decrease after every interation. Look at the plot:
+</p>
+<p>
+automatic convergence test: declare if \(J(\theta)\) decreases by less
+than &epsilon; = 10<sup>-3</sup> in one iteration (however, choosing &epsilon; is
+difficult).
+</p>
+
+<div class="figure">
+<p><img src="img/gradient_descent_cost_function_converging.png"  alt="img/gradient_descent_cost_function_converging.png" /></p>
+<p>Plotting the cost function and checking for monotonically decreasing cost</p>
+</div>
+
+<p>
+However, if \(\alpha\) is too small, the convergence will be slow. If
+\(\alpha\) is too large, it might overshoot (oscillating, also causing
+slow convergence) or diverge.
+</p>
+
+<div class="figure">
+<p><img src="img/gradient_descent_too_large_and_too_small_alpha.png"  alt="img/gradient_descent_too_large_and_too_small_alpha.png" /></p>
+<p>&alpha; is too large (zigzag) or too small (small gradient)</p>
+</div>
+
+
+<div class="figure">
+<p><img src="img/three_cost_function_convergence_rates.png"  alt="img/three_cost_function_convergence_rates.png" /></p>
+<p>good convergence (left) vs. slow convergence (center) vs. divergence (right) (relatively, and like on specific assumptions about the cost function)</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-3_8" class="outline-3">
+<h3 id="sec-3_8"><span class="section-number-3">3.8</span> polynomial regression </h3>
+<div class="outline-text-3" id="text-3_8">
+
+
+<p>
+for housing prices, could do &theta;<sub>1</sub> * frontage + &theta;<sub>2</sub> * depth, or
+can combine into area = frontage * depth, so have &theta;<sub>1</sub> * area.
+</p>
+<p>
+(later in the course he will introduce algorithms for automatically
+choosing features).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3_9" class="outline-3">
+<h3 id="sec-3_9"><span class="section-number-3">3.9</span> normal equation </h3>
+<div class="outline-text-3" id="text-3_9">
+
+
+<p>
+method to solve for &theta; analytically. Take partial derivative of
+J(&theta;) and set to 0. Then after some math, \(\theta = (X^T X)^{-1} X^T
+y\), where X is the <em>design matrix</em> of the training data, and y is the
+output. It is constructed as
+\[
+  X = 
+\begin{bmatrix}
+    ... (x^{(1)})^T ...\\
+    \vdots\\
+    ... (x^{(m)})^T ...\\
+\end{bmatrix}
+\]
+and
+\(x^{(i)} = [1, x_1^{(i)}] \in \mathbb{R}^{n+1}\).
+(the "1" is to remove the need for a separate offset term (ie. instead
+of \(\theta^T x +b\), one can use \(\theta^T x\) and drop the b term)).
+</p>
+<p>
+gradient descent: works well with large n.
+normal eq: need to compute (X<sup>T</sup> X)<sup>-1</sup> (X is a nxn matrix, and inversion is about O(n<sup>3</sup>)).
+</p>
+<p>
+What if \(X^T X\) is non-invertible (called singular or degenerate)?
+Causes are that there are redundant features (linearly dependent)
+(ex. x<sub>1</sub> = size in sq feet, and x<sub>2</sub> = size in sq m), or there are too
+many features (m \leq n) (delete some features, or use regularization).
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> logistic regression </h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4_1" class="outline-3">
+<h3 id="sec-4_1"><span class="section-number-3">4.1</span> motivation </h3>
+<div class="outline-text-3" id="text-4_1">
+
+
+<p>
+We trying to predict a variable \(y \in \{0,1\}\), where "0" is the negative
+class, and "1" is the positive class.
+</p>
+
+
+
+<pre class="example">|                x x x x x x                      x
+|
+|
+|             o
+|
+|
+---x x x x x------------------------&gt;
+</pre>
+
+
+
+<p>
+One could use linear regression, where \(h_{\theta}(x) = \theta^Tx\), and
+if \(h_{\theta}(x) \geq 0.5\) then \(y=1\). One problem is that if one adds
+an (influential) outlier, then the threshold changes, even though
+intuitively, for the above data set, the threshold should remain the
+same. Another problem is that \(h_{\theta}(x)\) can be &gt; 1 or &lt; 0, yet y
+is supposed to output in \(\{0,1\}\).
+</p>
+<p>
+Instead, one should use logistic regression (actually a classification
+algorithm) where \(0 \leq h_{\theta}(x) \leq 1\).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4_2" class="outline-3">
+<h3 id="sec-4_2"><span class="section-number-3">4.2</span> hypothesis representation </h3>
+<div class="outline-text-3" id="text-4_2">
+
+
+<p>
+Instead of \(\theta^T x\), use \(h_{\theta}(x) = g(\theta^T x)\), where
+\(g(z) = 1/(1 +e^{-z})\) is the sigmoid or logistic function.
+</p>
+<p>
+\(h_{\theta}(x)\) is the estimated probability that \(y = 1\) on input x, or
+more formally, the probability that y=1 given x parameterized by &theta;
+is \(h_{\theta}(x) = p(y=1|x;\theta)\) (\(h_{\theta}(x)\) is a real-value on
+[0,1], but y is a binary variable in \(\{0,1\}\)).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4_3" class="outline-3">
+<h3 id="sec-4_3"><span class="section-number-3">4.3</span> decision boundary </h3>
+<div class="outline-text-3" id="text-4_3">
+
+
+<p>
+Since \(h_{\theta}(x)\) is a probability, to use it a classifier, one
+could try \(y=1\) if \(h_{\theta}(x) \geq 0.5\), and y=0 else.  Since \(g(z)
+\geq 0.5\) when \(z \geq 0\), then \(h_{\theta}(x) = g(\theta^T x) \geq 0.5\)
+when \(\theta^T x \geq 0\).
+</p>
+
+<div class="figure">
+<p><img src="img/logreg_-_g(-3_+x_1_+x_2).png"  alt="img/logreg_-_g(-3_+x_1_+x_2).png" /></p>
+<p>The hypothesis h<sub>&theta;</sub>(x) = g(-3 +x<sub>1</sub> +x<sub>2</sub>) with decision boundary</p>
+</div>
+<p>
+y=1 if \(h_{\theta}(x) = g(-3 +x_1 +x_2) \geq 0\)
+</p>
+<p>
+Note that the decision boundary is a property of the hypothesis, not the
+data set. You could take away the data, and you would still have a
+"boundary" drawn. In other words, a hypothesis defines a boundary (of
+where the data will be).
+</p>
+<p>
+Higher order terms can be added to the decision boundary.
+</p>
+<div class="figure">
+<p><img src="img/logreg_-_g(-1_+x_1_2+x_2_2).png"  alt="img/logreg_-_g(-1_+x_1_2+x_2_2).png" /></p>
+<p>The hypothesis h<sub>&theta;</sub>(x) = g(-1 +x<sub>1</sub><sup>2</sup> +x<sub>2</sub><sup>2</sup>) with decision boundary</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-4_4" class="outline-3">
+<h3 id="sec-4_4"><span class="section-number-3">4.4</span> cost function </h3>
+<div class="outline-text-3" id="text-4_4">
+
+
+<p>
+Given m examples \(x \in [x_0 \dots x_n]\), \(x_0 = 1\), \(y \in \{0,1\}\),
+and \(h_{\theta}(x) = 1/(1 +e^{-\theta^T x})\), how does one choose \(\theta\)?
+One could define 
+\[
+    J(\theta) = \frac{1}{m} \sum_i \text{Cost}(h_{\theta}(x^{(i)}),y)
+\]
+where \(\text{Cost}(h_{\theta}(x),y) = \tfrac{1}{2} (h_{\theta}(x)
+-y)^2\). However, one cannot use this because it is non-convex (has many
+local optima), and one wants the cost function to be convex because then
+gradient descent will not get trapped in local optima.
+</p>
+<p>
+Instead, for logistic regression, use the cost function
+\[
+  \text{Cost}(h_{\theta}(x),y) =
+\begin{cases}
+-\log(h_{\theta}(x))    & y=1\\
+-\log(1 -h_{\theta}(x)) & y=0
+\end{cases}
+\]
+That is, it is the cost of h at x output's when it is actually y.
+</p>
+<p>
+This has some good properties. For y=1, Cost = 0 when
+\(h_{\theta}(x)=1\). However, as \(h_{\theta}(x) \to 0\), \(\text{Cost} \to
+\infty\) (penalizing the algorithm). For y=0, it is the mirror along
+x=0.5 of the y=1 case. It is also convex. Visually:
+</p>
+<div class="figure">
+<p><img src="img/logreg_-_cost_function.png"  alt="img/logreg_-_cost_function.png" /></p>
+<p>Logistic regression cost function</p>
+</div>
+
+<p>
+More compactly
+\[
+\text{Cost}(h_{\theta}(x),y)
+= -y \log (h_{\theta}(x)) -(1-y) \log(1 -h_{\theta}(x))
+\]
+(derivable from maximum liklihood, and is convex), hence
+\[
+    J(\theta)
+= -\frac{1}{m} \sum_{i=1}^m
+     y^{(i)} \log (h_{\theta}(x^{(i)})) +(1-y^{(i)}) \log(1 -h_{\theta}(x^{(i)}))
+\]
+
+
+To fit the parameters, use (batch) gradient descent:
+\[
+    \theta_j
+:= \theta_j -\alpha \frac{\partial}{\partial \theta_j} J(\theta)
+ = \theta_j -\alpha \sum_{i=1}^m (h_{\theta}(x^{(i)}) -y^{(i)})x_j^{(i)}
+\]
+The form of BGD is the same, but the definition of h<sub>&theta;</sub>(x) has
+changed, ie. \(h_{\theta}(x) = \tfrac{1}{1 +e^{-\theta^T x}}\).
+</p>
+<p>
+Don't forget to use feature scailing for logistic regression as well.
+</p>
+<p>
+Other optimization algorithms, such as conjugate gradient, BFGS, or
+L-BFGS, can also compute \(J(\theta)\) and \(\tfrac{\partial}{\partial
+\theta_j} J(\theta)\). These automatically pick \(\alpha\) (using an inner
+loop doing line-search), and often converge faster than gradient
+descent. However, they are more complex.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4_5" class="outline-3">
+<h3 id="sec-4_5"><span class="section-number-3">4.5</span> multiclass classification </h3>
+<div class="outline-text-3" id="text-4_5">
+
+
+<p>
+In one-vs-all (aka. one-vs-rest), turn the problem into N separate
+binary classifications. ex. for N=3, for class 1, merge class 2 and 3,
+and fit \(h_{\theta}^{(1)}(x)\) where the $.<sup>(1)</sup>$ is for class 1, and so
+on, fitting \(h_{\theta}^{(i)}(x) = P(y=i|x;\theta)\)
+</p>
+<div class="figure">
+<p><img src="img/one_vs_all_n=3.png"  alt="img/one_vs_all_n=3.png" /></p>
+<p>One-vs-all for N=3</p>
+</div>
+
+<p>
+Note that formulating the problem as "h<sub>&theta;</sub>(x) &gt; 0$, then y=1,
+etc., hides too much when thinking about multiclass LR. Instead, because
+\(h_{\theta}^{(i)}(x)\) assigns a probability, for a given x, pick i where
+\(h_{\theta}^{(i)}(x)\) has the largest probability.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> regularization </h2>
+<div class="outline-text-2" id="text-5">
+
+
+<p>
+"underfit" or "high bias", where it doesn't fit training data very well
+("bias" means here "strong preconception"). "overfit" or "high
+variance", where the space of hypothesis is too large.
+</p>
+
+<div class="figure">
+<p><img src="img/under_right_over_-_fit.png" id="img_-_under_right_over_-_fit" alt="img/under_right_over_-_fit.png" /></p>
+<p>Under-, right-, and over-fit</p>
+</div>
+
+<p>
+Overfitting occurs when, if we have too many features (and too few
+examples), the learned hypothesis may fit the training set very well,
+but fails to generalize to new examples.
+</p>
+
+<div class="figure">
+<p><img src="img/under_right_over_-_fit_-_logreg.png"  alt="img/under_right_over_-_fit_-_logreg.png" /></p>
+<p>Under-, right-, and over-fit for linear regression</p>
+</div>
+
+<p>
+One can address overfitting by (1) reducing num features (manually
+select "important" features, or later will introduce a model selection
+algorithm), or (2) regularization, where one keeps all features, but
+reduce magnitudes/values of \(\theta_j\) (this works well when we have many
+features that each contribute a little bit).
+</p>
+
+</div>
+
+<div id="outline-container-5_1" class="outline-3">
+<h3 id="sec-5_1"><span class="section-number-3">5.1</span> cost function </h3>
+<div class="outline-text-3" id="text-5_1">
+
+
+<p>
+For regularized linear regression
+\[
+\min_{\theta} \frac{1}{2m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) -y^{(i)})^2
++\lambda \sum_{i=1}^n \theta_j^2
+\]
+where &lambda; is the regularization parameter. (Note that we won't
+penalize \(\theta_0\) by convention). The last term is the penalization
+term to favour a "simpler" hypothesis, making it less prone to
+overfitting.
+A large &lambda; penalizes large values of &theta;, amplifying those
+values in the cost function, thus affecting them more than small values.
+</p>
+<p>
+In the "Under-, right-, and over-fit" <a href="#img_-_under_right_over_-_fit">figure</a>, imagine we penalize
+\(\theta_3\) and \(\theta_4\). This lowers those two terms towards zero,
+moving the model back towards the "right-fit" (middle) figure.
+</p>
+<p>
+However, if &lambda; is too large the result is underfitting.
+</p>
+<p>
+Since we don't know which parameters are "irrelevant", in regularization
+we are shrinking all of them (this seems a little heavy-handed).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5_2" class="outline-3">
+<h3 id="sec-5_2"><span class="section-number-3">5.2</span> regularized linear regression </h3>
+<div class="outline-text-3" id="text-5_2">
+
+
+<p>
+simulatenously update
+\begin{align*}
+\theta_j
+&:= \theta_j -\alpha \left[\frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) -y^{(i)})x_j^{(i)} +\frac{\lambda}{m} \theta_j\right]\\
+&= \theta_j -\alpha \frac{\partial}{\partial \theta_j} J(\theta)\\
+&:= \theta_j (1 -\alpha\frac{\lambda}{m}) -\alpha\frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) -y^{(i)})x_j^{(i)}
+\end{align*}
+where \((1 -\alpha\frac{\lambda}{m}) \lt 1\). In other words, we are
+shrinking &theta;<sub>j</sub> a little bit, followed by gradient descent (fitting
+our intuition about what regularization should do).
+</p>
+<p>
+Consider the design matrix \(X = [(x^{(1)})^T ... (x^{(m)})^T]^T\), y =
+\([y^{(1)} ...]^T \in \mathbb{R}^m\). To find \(\min_{\theta} J(\theta)\), take
+the gradient and set to zero to get
+\[
+    \theta = (X^T X + \lambda I_{n+1, \text{but where}\ (1,1) = 0} )^{-1} X^T y
+\]
+(note, the "normal equation" is \(\hat{\beta} = (X^TX)^{-1}X^Ty\), so the hat
+matrix would be \(X(X^TX)^{-1}X^T\) because \(\hat{y} = X\hat{\beta}\)).
+</p>
+<p>
+If \(m \leq n\) ((#ex) &lt; (#features)) then for \(\theta = (X^TX)^{-1}X^Ty\),
+\((X^TX)^{-1}\) will be non-invertible/singular/degenerate. However, if
+\(\lambda &gt; 0\), that matrix is invertible.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-5_3" class="outline-3">
+<h3 id="sec-5_3"><span class="section-number-3">5.3</span> regularized logistic regression </h3>
+<div class="outline-text-3" id="text-5_3">
+
+
+
+
+\[
+J(\theta) = -\left[
+    \frac{1}{m} \sum_{i=1}^m y^{(i)}     \log h_{\theta}(x^{(i)})
+                            +(1 -y^{(i)})\log (1 -h_{\theta}(x^{(i)}))
+\right]
++\frac{\lambda}{2m} \sum_{j=1}^n \theta_j^2
+\]
+<p>
+and for gradient descent, simulatenously do
+\[
+\theta_j :=
+\theta_j -\alpha \left[\frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) -y^{(i)})x_j^{(i)} +\frac{\lambda}{m} \theta_j\right]
+\]
+(ie. same thing as regularized linear regression, but a different h).
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> neural networks: representation </h2>
+<div class="outline-text-2" id="text-6">
+
+
+</div>
+
+<div id="outline-container-6_1" class="outline-3">
+<h3 id="sec-6_1"><span class="section-number-3">6.1</span> non-linear classification </h3>
+<div class="outline-text-3" id="text-6_1">
+
+
+<p>
+Logistic regression with complex polynomial terms might work when the
+number of features is small. But many problems use many more
+features. Even if one only uses 2nd order terms, the number of features
+grows O(n<sup>2</sup>). One could then try using only a subset, but this could
+prevent interesting hypothesis because the number of features used is
+reduced.
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-6_2" class="outline-3">
+<h3 id="sec-6_2"><span class="section-number-3">6.2</span> neurons and the brain </h3>
+<div class="outline-text-3" id="text-6_2">
+
+
+<p>
+The "one learning algorithm" hypothesis for the brain says, if you
+rewire a sense pathway (neuro rewiring hypothesis), then it will learn
+that organ's function.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6_3" class="outline-3">
+<h3 id="sec-6_3"><span class="section-number-3">6.3</span> model representation </h3>
+<div class="outline-text-3" id="text-6_3">
+
+
+<p>
+notation:
+</p><ul>
+<li>
+\(a_i^{(j)}\): activation of unit i in layer j
+</li>
+<li>
+\(\Theta^{(j)}\): matrix of weights controlling function mapping from
+layer j to j+1.
+</li>
+<li>
+\(\Theta_{ji}^{(l)}\): weight from unit i in layer l, to unit j in layer l+1
+</li>
+</ul>
+
+
+
+<div class="figure">
+<p><img src="img/nn_representation.png"  alt="img/nn_representation.png" /></p>
+<p>NN representation showing input, hidden, and output layer, plus the bias units</p>
+</div>
+<p>
+x<sub>0</sub> is bias unit (but is always equal to 1, and hence sometimes is dropped).
+</p>
+<p>
+\(h_{\Theta} = 1/(1 +\exp(-\Theta^T X))\) is called the sigmoid (logistic)
+activation function, and \(\Theta\) is called the parameters, or <em>weights</em>.
+</p>
+<p>
+Imagine you cover layer 1. The result is
+\(h_{\Theta} = g(\Theta_{10}^{(2)}a_0^{(2)} + \Theta_{11}^{(2)}a_1^{(2)} + \Theta_{12}^{(2)}a_2^{(2)} + \Theta_{13}^{(2)}a_3^{(2)})\),
+which is the same form of model used in logistic regression.
+</p>
+<p>
+If a network has \(s_j\) units in layer j, \(s_{j+1}\) units in layer j+1,
+then \(\Theta^{(j)}\) will have the dimension \(s_{j+1} \times (s_j +1)\).
+So if there are two inputs nodes in layer 1, that are mapped onto four
+nodes in layer 2, then \(\Theta^{(1)}\) will be 4x3 (= 4x(2+1))). (Every
+output from an activation goes as input to every node in the following
+layer (there are to be no unconnected wires)).
+</p>
+<p>
+(Depending on how many layers and the input to output number, these
+types of parameters are called the NN's architecture).
+</p>
+
+</div>
+
+<div id="outline-container-6_3_1" class="outline-4">
+<h4 id="sec-6_3_1"><span class="section-number-4">6.3.1</span> forward propagation </h4>
+<div class="outline-text-4" id="text-6_3_1">
+
+
+<p>
+Forward propagation is the process of computing \(h_{\Theta}(x)\).  Let
+\(z^{(2)} = \Theta^{(1)}x = \Theta^{(1)}a^{(1)}\), \(a^{(2)} = g(z^{(2)})\)
+(with \(a_0^{(2)} = 1\) by default), and so on.  \(z^{(3)} =
+\Theta^{(2)}a^{(2)}\), so \(h_{\Theta}(x) = a^{(3)} = g(z^{(3)})\).
+</p>
+<p>
+Again imagine that you cover layer 1. Forward propagation shows
+that a NN is learning its own features in the hidden layer, and then
+performing its own logistic regression (but without having to create
+very large polynomial terms in the feature mapping done in logistic
+regression).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6_3_2" class="outline-4">
+<h4 id="sec-6_3_2"><span class="section-number-4">6.3.2</span> examples </h4>
+<div class="outline-text-4" id="text-6_3_2">
+
+
+<p>
+Let \(x_1,x_2 \in \{0,1\}\). We want to compute \(y = x_1 \text{XNOR}\ 
+x_2\). However first break it down into simpler function.
+</p>
+<p>
+For NOT, it seems intuitive that if we use a sigmoid function, one
+should put a large negative value on input x<sub>1</sub> to "reverse" the value it
+would produce.
+</p>
+
+<div class="figure">
+<p><img src="img/nn_not.png"  alt="img/nn_not.png" /></p>
+<p>NN NOT</p>
+</div>
+
+<p>
+If we find the weights for AND, (NOT x<sub>1</sub>) AND (NOT x<sub>2</sub>), and OR, and put
+them together, we can get XNOR.
+</p>
+
+<div class="figure">
+<p><img src="img/nn_xnor.png"  alt="img/nn_xnor.png" /></p>
+<p>NN XNOR</p>
+</div>
+
+<p>
+(video: shows handwritten digit recognition for it, rotation, random
+noise, structured noise, bolding, and multiple segments).
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6_4" class="outline-3">
+<h3 id="sec-6_4"><span class="section-number-3">6.4</span> multiclass classification </h3>
+<div class="outline-text-3" id="text-6_4">
+
+
+<p>
+Previously we used \(y \in \{1,2,3,4\}\). However this time we will
+use \(h_{\theta}(x) \approx [1,0,0,0]\) (pedestrian), [0,1,0,0] (car),
+[0,0,1,0] (motorcycle), etc.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> neural networks: learning </h2>
+<div class="outline-text-2" id="text-7">
+
+
+</div>
+
+<div id="outline-container-7_1" class="outline-3">
+<h3 id="sec-7_1"><span class="section-number-3">7.1</span> cost function </h3>
+<div class="outline-text-3" id="text-7_1">
+
+
+<p>
+The cost function is a generalization of the cost function in logistic regression
+\[
+J(\Theta) = -\frac{1}{m}
+\left[
+    \sum_{i=1}^m
+    \sum_{k=1}^K 
+        y_k^{(i)}   \log (h_{\Theta}(x^{(i)}))_k
+      + (1 -y^{(i)})\log (1 -(h_{\Theta}(x^{(i)}))_k)\right]
+ORG-LIST-END
++\frac{\lambda}{2m}
+    \sum_{l=1}^{L -1}
+    \sum_{i=1}^{s_l}
+    \sum_{j=1}^{s_l +1}
+    (\Theta_{ji}^{(l)})^2
+\]
+where L is the number of units in the network, \(s_l\) is the number of
+units (not counting the bias unit) in layer l, \(h_{\Theta}(x) \in
+\mathbb{R}^K\), and \((h_{\Theta}(x))_i\) denotes the i<sup>th</sup> output (and
+the label is equal to the \(\arg\max_i (h_{\Theta}(x))_i\)?).
+</p>
+<p>
+The first term is like the first term in logistic regression, except
+now, rather than for 1 unit, we sum over k output units
+(\(\sum_{k=1}^K\)).  The second term regularizes for each weight, with the
+third sum for each "from" unit, the second sum for each "to" unit, and
+first sum for each layer, all then multiplied by the regualization
+parameter.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7_2" class="outline-3">
+<h3 id="sec-7_2"><span class="section-number-3">7.2</span> backpropagation </h3>
+<div class="outline-text-3" id="text-7_2">
+
+
+<p>
+(trying to calcaulate J(&Theta;) and its gradient)
+</p>
+<p>
+Let \(\delta_j^{(l)}\) be the error of node j in layer l.
+\(\delta_j^{(l)} = a_j^{(l)} -y_j\), or vectorized, \(\delta^{(l)} =
+a^{(l)} -y\). This is the difference between the output value and the
+training value.
+It can be written out as \(\delta^{(3)} = (\Theta^{(3)})^T \delta^{(4)}
+.* g'(z^{(3)})\) (".*" element-wise multiplication), and \(g'(z^{(3)}) =
+a^{(3)} .* (1 -a^{(3)})\) (or \(g'(z^{(3)}) = g(z^{(3)}) .* (1
+-g(z^{(3)}))\)) (note there is no \(\delta^{(1)}\) term because no err
+associated with input layer).
+</p>
+<p>
+Given a training set \(\{(x^{(k)},y^{(k)})\}_{k=1}^m\), set
+\(\Delta_{ij}^{(l)} = 0\) for all l,i,j, then run, for i = 1 to m:
+</p><ul>
+<li>
+set \(a^{(1)} = x^{(i)}\)
+</li>
+<li>
+perform forward propagation to compute \(z^{(l)}\), \(a^{(l)}\) for \(l=2,3,...,L\)
+</li>
+<li>
+using \(y^{(i)}\) compute \(\delta^{(L)} = a^{(L)} -y^{(i)}\) (the last
+layer's \(\delta\) is computed differently from all previous layers)
+</li>
+<li>
+(backpropagation) compute
+\(\delta^{(L-1)},\delta^{(L-2)},\dots,\delta^{(2)}\), where
+\(\delta^{(l)} = (\Theta^{(l)})^T \delta^{(l+1)} .* g'(z^{(l)})\)  
+</li>
+</ul>
+
+<ul>
+<li>
+\(\Delta_{ij}^{(l)} := \Delta_{ij}^{(l)} +a_j^{(l)}\delta_i^{(l+1)}\),
+or vectorized, \(\Delta^{(l)} := \Delta^{(l)}
++\delta^{(l+1)}(a^{(l)})^T\) (\(\Delta^{(l)}\) is a matrix indexed by ij).
+</li>
+</ul>
+
+
+<p>
+then compute
+\[
+D_{ij}^{(l)} :=
+\begin{cases}
+\tfrac{1}{m}\Delta_{ij}^{(l)} +\tfrac{\lambda}{m}\Theta_{ij}^{(l)} & \text{if}\ j \ne 0\\
+\tfrac{1}{m}\Delta_{ij}^{(l)} & \text{if}\ j=0\ \text{(bias term)}
+\end{cases}
+\]
+One can show that \(\tfrac{\partial}{\partial \Theta_{ij}^{(l)}} J(\Theta) = D_{ij}^{(l)}\).
+</p>
+
+
+
+<p>
+backpropagation intuition
+</p>
+
+<div class="figure">
+<p><img src="img/nn_fp.png"  alt="img/nn_fp.png" /></p>
+<p>Forward propagation as a weighted sum, passed through a sigmoid</p>
+</div>
+
+
+<div class="figure">
+<p><img src="img/nn_bp.png"  alt="img/nn_bp.png" /></p>
+<p>Back propagation also as a weighted sum of parameters and error term (multiplied with the derivative of a sigmoid evaluated at that unit's input value)</p>
+</div>
+
+<p>
+The difference is that in the weighted sum, for FP, it is the output
+activation of that unit, while for BP, it is the error (the difference
+in output compared to the training value).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7_3" class="outline-3">
+<h3 id="sec-7_3"><span class="section-number-3">7.3</span> gradient checking </h3>
+<div class="outline-text-3" id="text-7_3">
+
+
+<p>
+Subtle bugs can be hard to detect in backprop. To check, one could use
+gradient checking. To do so, first compute the approximation for the
+two-sided difference derivative
+\[
+  \frac{d}{d\theta} J(\theta) \approx \frac{J(\theta +\epsilon) -J(\theta -\epsilon)}{2\epsilon}
+\]
+(by contrast, the one-sided difference, \(\tfrac{J(\theta +\epsilon) -J(\theta)}{\epsilon}\), is more numerically unstable).
+</p>
+
+<div class="figure">
+<p><img src="img/deriv_approx_-_two-sided.png"  alt="img/deriv_approx_-_two-sided.png" /></p>
+<p>Approximation of the derivative</p>
+</div>
+
+<p>
+Next, in the gradient, do this for each variable under question for each
+partial derivative
+\[
+\begin{align*}
+\frac{\partial}{\partial\theta_1} J(\theta) &= \frac{J(\theta_1 +\epsilon,\theta_2,\theta_3,\dots,\theta_n) -J(\theta_1 -\epsilon,\theta_2,\theta_3,\dots,\theta_n)}{2\epsilon}\\
+\frac{\partial}{\partial\theta_2} J(\theta) &= \frac{J(\theta_1,\theta_2 +\epsilon,\theta_3,\dots,\theta_n) -J(\theta_1,\theta_2 -\epsilon,\theta_3,\dots,\theta_n)}{2\epsilon}\\
+\vdots &\\
+\frac{\partial}{\partial\theta_n} J(\theta) &= \frac{J(\theta_1,\theta_2,\theta_3,\dots,\theta_n +\epsilon) -J(\theta_1,\theta_2,\theta_3,\dots,\theta_n -\epsilon)}{2\epsilon}\\
+\end{align*}
+\]
+(\(\theta \in \mathbb{R}^n\) (an "unrolled" version of \(\Theta^{(1)}, \Theta^{(2)}, \dots\)))
+</p>
+<p>
+Afterwards, check that gradient approximation is approximately equal to
+the gradient given by backprop.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7_4" class="outline-3">
+<h3 id="sec-7_4"><span class="section-number-3">7.4</span> random intialization </h3>
+<div class="outline-text-3" id="text-7_4">
+
+
+<p>
+Why not initialize the weights all to 0? The activation, deltas, and
+partial derivatives, will each be all equal. Hence the parameters will
+not be different upon FP or BP. This is the problem of symmetric weights.
+</p>
+<p>
+Random initalization does symmetry breaking.  Do so by initalizing
+\(\Theta_{ij}^{(l)}\) to a random value in \([-\epsilon,\epsilon]\).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7_5" class="outline-3">
+<h3 id="sec-7_5"><span class="section-number-3">7.5</span> putting it all together </h3>
+<div class="outline-text-3" id="text-7_5">
+
+
+<p>
+First pick an architecture. Number of input nodes equals the dimensions
+of the features chosen. Number of output nodes equals the number of
+classes. By default have one hidden layer, or more than one where there
+is the same number of units per layer. The more units in a hidden layer,
+usually the better. Finally, have the number of hidden units be
+comparable to the input or several times more. (He will say much more
+later about how to choose).
+</p>
+<p>
+Train the NN
+</p><ol>
+<li>
+rand init weights
+</li>
+<li>
+impl fp to get \(h_{\Theta}(x^{(i)})\) for any \(x^{(i)}\)
+</li>
+<li>
+compute \(J(\Theta)\)
+</li>
+<li>
+impl bp to compute partial \(\frac{\partial}{\partial
+   \Theta_{jk}^{(l)}} J(\Theta)\)
+</li>
+</ol>
+
+
+<p>
+The implementation could be, for i = 1:m
+</p><ul>
+<li>
+perform FP on \((x^{(i)},y^{(i)})\) and get activations \(a^{(l)}\)
+</li>
+<li>
+perform BP on \((x^{(i)},y^{(i)})\) and get deltas \(\delta^{(l)}, l = 2,\dots,L\)
+</li>
+<li>
+\(\Delta^{(l)} := \Delta^{(l)} +\delta^{(l+1)}(a^{(l)})^T\)
+</li>
+</ul>
+
+<p>then find \(\tfrac{\partial}{\partial \Theta_{ij}^{(l)}} J(\Theta) = D_{ij}^{(l)}\).
+</p>
+<ol>
+<li>
+do gradient checking to compare partials computed using BP vs. numerial
+estimate of gradient \(J(\Theta)\)
+<ul>
+<li>
+then disable this code
+</li>
+</ul>
+</li>
+<li>
+use optimization with backprop (which computes partials) to try and minimize \(J(\Theta)\)
+</li>
+</ol>
+
+
+<p>
+Note, though \(J(\Theta)\) is non-convex, this is not much of a prob in practice.
+</p>
+<p>
+\(h_{\Theta}(x^{(i)}) \approx y^{(i)}\) when J is low.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> advice for applying machine learning </h2>
+<div class="outline-text-2" id="text-8">
+
+
+</div>
+
+<div id="outline-container-8_1" class="outline-3">
+<h3 id="sec-8_1"><span class="section-number-3">8.1</span> deciding what to try next </h3>
+<div class="outline-text-3" id="text-8_1">
+
+
+<p>
+Hypothesis has large errors on new data. What to do?
+</p><ul>
+<li>
+get more training examples
+<ul>
+<li>
+doesn't always help (yet a common flaw to do so)
+</li>
+</ul>
+</li>
+<li>
+smaller set of features
+</li>
+<li>
+get additional features
+</li>
+<li>
+add polynomial features
+</li>
+<li>
+increase &lambda;
+</li>
+<li>
+decrease &lambda;
+</li>
+</ul>
+
+
+<p>
+wrong method: gut feeling (wastes time on wrong path) (self: more
+precise to say untrained intuition, or intuition learnt in the "absence
+of stable regularities in the environment" (<a href="http://www.psychologytoday.com/blog/hot-thought/201203/should-you-trust-your-intuitions">src</a>). You will be using
+intuition, esp. when under a time pressure).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-8_2" class="outline-3">
+<h3 id="sec-8_2"><span class="section-number-3">8.2</span> evaluating a hypothesis </h3>
+<div class="outline-text-3" id="text-8_2">
+
+
+<p>
+Randomly (if ordered) split dataset into training set and test set
+(to ensure they have the same distribution; 70-30% typical).
+</p>
+<p>
+Though one could calculate \(J_{\text{test}}(\theta)\), an easier metric is
+the misclassification error (or 0/1 misclassification error).
+</p>
+<p>
+For logistic regression
+\[
+\text{err}(h_{\theta}(x),y) =
+\begin{cases}
+    1 & \text{if}\ h_{\theta}(x) \geq 0.5\ \text{when}\ y=0\\
+      & \text{or if}\ h_{\theta}(x) \lt 0.5\ \text{when}\ y=1\\
+    0 & \text{else}
+\end{cases}
+\]
+then test error is \(\tfrac{1}{m_{\text{test}}} \sum_{i=1}^{m_{\text{test}}} \text{err}(h_{\theta}(x^{(i)}),y^{(i)})\).
+(see also confusion matrix).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-8_3" class="outline-3">
+<h3 id="sec-8_3"><span class="section-number-3">8.3</span> model selection and training/validation/test sets </h3>
+<div class="outline-text-3" id="text-8_3">
+
+
+<p>
+How does one select the best model? One could fit \(\Theta^{(d)}\) for
+some degree d, then choose d the gives the best \(J_{\text{test}}(\theta)\).
+The problem is that the cost will be an optimistic estimate of the
+generalization error, because it was fit to the test set, and we chose
+the one that fit the test set best. Hence we don't know if it will
+generalize well. (ie. "If we develop new features by examining the test
+set, then we may end up choosing features that work well specifically
+for the test set, so \(J_{\text{test}}(\theta)\) is no longer a good
+estimate of how well we generalize to new examples.")
+Instead, split the data into training, (cross-)validation (cv), and test
+set (60-20-20%).
+</p>
+
+<p>
+For each model k, find the &theta;<sup>(k)</sup> that minimizes \(J(\theta)\), then
+calculate \(J_{\text{cv}}(\theta^{(k)})\). Then pick the model that has the
+lowest \(J_{\text{cv}}\) with &theta;<sup>*</sup>, and then estimate the generalization
+error on the <strong>test set</strong> with \(J_{\text{test}}(\theta^*)\).
+</p>
+<p>
+(warning, some people use the same set for cv and test. Might be ok for
+a "large" test set, but not good practice).
+</p>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-8_4" class="outline-3">
+<h3 id="sec-8_4"><span class="section-number-3">8.4</span> diagnosing bias vs. variance </h3>
+<div class="outline-text-3" id="text-8_4">
+
+
+
+<div class="figure">
+<p><img src="img/underfit_vs_overfit_-_train_cv_sets.png"  alt="img/underfit_vs_overfit_-_train_cv_sets.png" /></p>
+<p>Bias (underfit) vs. variance (overfit) as a function of polynomial degree</p>
+</div>
+
+<p>
+bias (underfit): \(J_{\text{train}}(\theta)\) high and
+\(J_{\text{cv}}(\theta) \approx J_{\text{train}}(\theta)\).
+</p>
+<p>
+variance (overfit): \(J_{\text{train}}(\theta)\) low but
+\(J_{\text{cv}}(\theta) \gg J_{\text{train}}(\theta)\).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-8_5" class="outline-3">
+<h3 id="sec-8_5"><span class="section-number-3">8.5</span> regularization and bias/variance </h3>
+<div class="outline-text-3" id="text-8_5">
+
+
+<p>
+The cost function \(J_{\text{train}}(\theta) = \tfrac{1}{m}\sum_{i=1}^m (h_{\theta}(x^{(i)}) -y)^2\)
+is the average sum of squares (and is the same too for cv and test).
+</p>
+<p>
+Remember that since larger &lambda; tends to suppress the parameters
+more, it leads to less complicated models.
+</p>
+
+<div class="figure">
+<p><img src="img/bias_variance_-_regularization.png"  alt="img/bias_variance_-_regularization.png" /></p>
+<p>Bias vs. variance as a function of regularization</p>
+</div>
+
+<p>
+The way &lambda; is selected is similar to model selection for &theta;.
+First try various &lambda; for a given model (\(h_{\theta}(x)\) and
+\(J(\theta)\)). Then choose the model that gives the lowest
+\(J_{\text{cv}}(\theta^*)\), and then calculate \(J_{\text{test}}(\theta^*)\).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-8_6" class="outline-3">
+<h3 id="sec-8_6"><span class="section-number-3">8.6</span> learning curves </h3>
+<div class="outline-text-3" id="text-8_6">
+
+
+<p>
+Plot \(J_{\text{train}}(\theta)\) and \(J_{\text{cv}}(\theta)\), on an error
+vs. m (training set size) plot.
+</p>
+
+<div class="figure">
+<p><img src="img/learning_curves_-_training_size.png"  alt="img/learning_curves_-_training_size.png" /></p>
+<p>Learning curve: Error as a function of training size</p>
+</div>
+
+
+<div class="figure">
+<p><img src="img/learning_curves_-_high_bias.png"  alt="img/learning_curves_-_high_bias.png" /></p>
+<p>High bias</p>
+</div>
+
+<p>
+With this learning curve showing high bias, it becomes clear that more
+data by itself isn't going to help (there are diminishing returns on
+\(J_{\text{cv}}\)).
+</p>
+
+<div class="figure">
+<p><img src="img/learning_curves_-_high_variance.png"  alt="img/learning_curves_-_high_variance.png" /></p>
+<p>High variance</p>
+</div>
+
+<p>
+With this learning curve of high variance, it is clear that more
+training data would help. If you were to extend the training set size
+further, \(J_{\text{cv}}\) would indeed diminish.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-8_7" class="outline-3">
+<h3 id="sec-8_7"><span class="section-number-3">8.7</span> deciding what to do next revisited </h3>
+<div class="outline-text-3" id="text-8_7">
+
+
+<ul>
+<li>
+get more training examples: fixes high variance
+</li>
+<li>
+smaller set of features: fixes high variance
+</li>
+<li>
+get additional features: fixes high bias (curr hypothesis too simple,
+and more features makes it more specific)
+</li>
+<li>
+add polynomial features: fixes high bias (similar to additional features)
+</li>
+<li>
+decreasing &lambda;: fixes high bias
+</li>
+<li>
+increasing &lambda;: fixes high variance
+</li>
+</ul>
+
+
+<p>
+nn and overfitting
+</p><ul>
+<li>
+small nn, fewer params (so more prone to underfitting), but
+computationally cheaper
+</li>
+<li>
+large nn, more params (more prone to overfitting), and more
+computationally expensive (not as problematic as overfitting) (use
+&lambda; to address overfitting)
+</li>
+</ul>
+
+
+<p>
+single hidden layer is good default (but try training with 2, 3,
+etc. hidden layers, and then select best \(J_{\text{cv}}\), again using the
+same procedure given earlier for model selection).
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> machine learning system design </h2>
+<div class="outline-text-2" id="text-9">
+
+
+</div>
+
+<div id="outline-container-9_1" class="outline-3">
+<h3 id="sec-9_1"><span class="section-number-3">9.1</span> prioritizing what to work on: spam classification example </h3>
+<div class="outline-text-3" id="text-9_1">
+
+
+<p>
+First, how should one represent features x?
+y = spam (1) or non-spam (0). ex. "deal", "buy", "discount", etc. are
+more likely spam words, while "Andrew", "now" might less likely be spam.
+</p><pre class="example">
+[andrew,buy,deal,discount,...,now,...]
+</pre>
+
+<p>becomes
+</p><pre class="example">
+[0,1,1,0,...,1,...].
+</pre>
+
+
+<p>
+In practice, take the n = 10000 to 50000 most frequent words in a training set.
+</p>
+<p>
+How best to use your time?
+</p><ul>
+<li>
+collect lots of data (ex. "honeypot" emails sent to spammers).
+</li>
+<li>
+more sophisticated features based on email routing info (from email
+header).
+</li>
+<li>
+look at the message body. "discount", "discounts" as same word?
+"dealer" or "Dealer"? features about punctuation?
+</li>
+<li>
+develop sophisticated algorithms to detect misspelling (ex. m0rtgage).
+</li>
+</ul>
+
+
+<p>
+Prof says even he can't say which of these methods are "best". However,
+too many researchers will often randomly fixate on one of these options,
+and fail to enumerate options before making a decision.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-9_2" class="outline-3">
+<h3 id="sec-9_2"><span class="section-number-3">9.2</span> error analysis </h3>
+<div class="outline-text-3" id="text-9_2">
+
+
+<p>
+Start with alg that you can implement and test quickly on cv data (at most 1 day).
+Plot learning curves (no way to tell in advance what you need in the
+absence of evidence; avoids premature optimization (let evidence guide
+decisions of where to spend time; "data-driven")).
+Then try <em>error analysis</em>, where you manually examine the hypothesis (in
+the cv set not the test set) that your algorithm errs on. See if you
+spot any systematic trend in what type of examples are in error.
+For example, given m<sub>cv</sub> = 500, it misclassifies 100 emails. Manually
+examine the 100 and categorize them based on
+</p><ul>
+<li>
+type of email (ex. pharma, replica, steal passwords (phising), other)
+</li>
+<li>
+cues (features) that might have helped the algorithm classify them
+correctly (ex. deliberate mispelling, unusual routing, etc.)
+</li>
+</ul>
+
+
+<p>
+(if multiple algorithms have the same distribution on error type,
+because you made a quick and dirty implement, this might be more
+efficient for iteration …)
+</p>
+<p>
+<em>Numerial evaluation</em> (ex. cv error), a single number, of an algorithm's
+performance is important (we will see later that coming up with a metric
+will need more work).
+</p>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-9_3" class="outline-3">
+<h3 id="sec-9_3"><span class="section-number-3">9.3</span> error metrics for skewed classes </h3>
+<div class="outline-text-3" id="text-9_3">
+
+
+<p>
+Imagine a classifier gets 1% error on test set (99% correct). However,
+if for example 0.50% patients have cancer, why not use
+</p><pre class="example">
+predictCancer(x) return y = 0 (ignore x)
+</pre>
+
+<p>This has 0.5% error ("better"), even though it learns nothing. The
+problem is that it has a high accuracy because of the skewed classes,
+not because of overfitting, thus it will perform well on the cv set
+because the cv set will be similarly skewed. In other words, you can
+always achieve high accuracy on skewed datasets by predicting the most
+common class, for every input.
+</p>
+<p>
+A <em>skewed class</em> is when there is a lot more examples for one class than
+another class (self: ratio of priors not roughly 1?).
+</p>
+<p>
+So instead of accuracy, try instead precision/recall.
+</p>
+<p>
+Set y = 1 for the presence of a rare class that we want to detect.
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"></td><td class="left"></td><td class="left">actual class</td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left"></td><td class="left">1</td><td class="left">0</td></tr>
+<tr><td class="left">predicted class</td><td class="left">1</td><td class="left">true postive</td><td class="left">false positive</td></tr>
+<tr><td class="left"></td><td class="left">0</td><td class="left">false negative</td><td class="left">true negative</td></tr>
+</tbody>
+</table>
+
+
+<p>
+<em>precision</em>: of all patients where we predicted y=1, what fraction
+actually have cancer? ie. tp/# predicted as positive = tp/(tp+fp)
+</p>
+<p>
+<em>recall</em>: of all patients that actually have cancer, what fraction did we
+correctly detect as having cancer? ie. tp/# actual positives = tp/(tp+fn)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-9_4" class="outline-3">
+<h3 id="sec-9_4"><span class="section-number-3">9.4</span> trading off precision and recall </h3>
+<div class="outline-text-3" id="text-9_4">
+
+
+<p>
+How to predict y=1 only if very confident?
+</p>
+<p>
+In logistic regression, one can modify classification to be, predict 1:
+\(h_{\theta}(x) \geq 0.7\). This now has a higher precision but lower
+recall (with predicting y=1 on a smaller number).
+</p>
+<p>
+What about if we want to avoid missing too many cases of cancer (avoid
+fn's)? One could lower threshold, \(h_{\theta}(x) \geq 0.3\) (more recall,
+less precision).
+</p>
+<p>
+This threshold defines the tradeoff between precision vs. recall.
+</p>
+<p>
+How to choose the threshold automatically? How to compare precision/recall numbers?
+One could try the average (P+R)/2. The problem is that y=1 all the time
+has and average that is \(\gtrapprox 0.5\).
+Instead, use the F<sub>1</sub> score (or F score) \(\tfrac{2PR}{P+R}\). Larger
+scores mean larger precision <em>and</em> recall.
+</p>
+<p>
+Similar to model selection, to automatically set a threshold, try a
+range of values, then evaluate them on the cv set, then the threshold
+with the best F score.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-9_5" class="outline-3">
+<h3 id="sec-9_5"><span class="section-number-3">9.5</span> data for machine learning </h3>
+<div class="outline-text-3" id="text-9_5">
+
+
+<p>
+In 2001 (state of the art) a study compared four algorithms: perceptron
+(logreg), winnow, memory-based, naive Bayes. (will talk about naive
+Bayes later, rest not used that much now).  It found that most give
+similar performance, and as training set increases, accuracy
+montonically increases.  This led to the quote "it's not who has the
+best algorthm that wins. It's who has the most data". When is this true
+and when is it not true?
+</p>
+
+<div class="figure">
+<p><img src="img/accuracy_vs_log_train_set_size_-_4_algs.png"  alt="img/accuracy_vs_log_train_set_size_-_4_algs.png" /></p>
+<p>Similar algorithm performance for accuracy vs. train set size</p>
+</div>
+
+
+</div>
+
+<div id="outline-container-9_5_1" class="outline-4">
+<h4 id="sec-9_5_1"><span class="section-number-4">9.5.1</span> The large data rationale </h4>
+<div class="outline-text-4" id="text-9_5_1">
+
+
+<p>
+Assume feature x in \(\mathbb{R}^{n+1}\) has sufficient info to predict y
+accurately.
+(A counter example is predicting housing price from only
+size and no other features).
+(A useful test is, given input x, can a human expert confidentally
+predict y? (seems similar to that "stable regularities" quote in
+<a href="#sec-8_1">deciding what to try next</a>. If it is unstable, then there is very little
+to go on, and hence more data does not mean better performance)).
+</p>
+<p>
+Use a learning algorithm with a large number of params (logreg/linreg
+with lots of features, or nn with many hidden units), which are low bias
+algorithms where \(J_{\text{train}}(\theta)\) is small.
+Use a very large training set that is unlikely to overfit, where
+\(J_{\text{train}}(\theta) \approx J_{\text{test}}(\theta)\).
+The implies \(J_{\text{test}}(\theta)\) is small.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9_6" class="outline-3">
+<h3 id="sec-9_6"><span class="section-number-3">9.6</span> terminology </h3>
+<div class="outline-text-3" id="text-9_6">
+
+
+<ul>
+<li>
+Accuracy = (true positives + true negatives) / (total examples)
+</li>
+<li>
+Precision = (true positives) / (true positives + false positives)
+</li>
+<li>
+Recall = (true positives) / (true positives + false negatives)
+</li>
+<li>
+F1 score = (2 * precision * recall) / (precision + recall)
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> SVM </h2>
+<div class="outline-text-2" id="text-10">
+
+
+</div>
+
+<div id="outline-container-10_1" class="outline-3">
+<h3 id="sec-10_1"><span class="section-number-3">10.1</span> optimization objective </h3>
+<div class="outline-text-3" id="text-10_1">
+
+
+
+<p>
+SVM can be obtain with a slight modification to logistic
+regression. Consider the term an example (x,y) contributes to
+\[
+    y^{(i)} (-\log h_{\theta}(x^{(i)})) + (1 -y^{(i)})(-\log (1 -h_{\theta}(x^{(i)})))
+\]
+where \(h_{\theta}(x)\) is the logistic function. Change \(-\log(h)\) to
+cost<sub>y</sub>(), which is like \(-\log(h)\), except for y=1, it is zero for y &gt;
+1, and linear for \(y \leq 1\), approximating the same slope as
+\(-\log(h)\), and likewise for \(\text{cost}_0\).
+</p>
+<p>
+For SVM, the optimization objective is
+\[
+  \min_{\theta} C  \left[    \sum_{i=1}^m y^{(i)} \text{Cost}_1(\theta^T x^{(i)})           + (1 -y^{(i)})\text{Cost}_0(\theta^T x^{(i)}) \right]  + \frac{1}{2} \sum_{j=1}^n \theta_j^2
+\]
+Unlike logreg, it doesn't output a probability, rather the hypothesis
+outputs 1 (if \(\theta^T x \geq 0\)) else 0.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10_2" class="outline-3">
+<h3 id="sec-10_2"><span class="section-number-3">10.2</span> large margin intuition </h3>
+<div class="outline-text-3" id="text-10_2">
+
+
+<p>
+If y = 1, we want \(\theta^T x \geq 1\), not just \(\geq 0\) because we want
+some "margin".
+</p>
+<p>
+svm, aka. largin margin classifier.
+</p>
+<p>
+largin magin intuition here only valid when C is large.
+</p>
+<p>
+C similar to 1/&lambda; (if the resultant boundary has underfit the
+training set, since one would like to lower the bias, one can do this by
+increasing C or decreasing &sigma;<sup>2</sup> (for a Gaussian kernel)).
+</p>
+
+<div class="figure">
+<p><img src="img/svm_-_large_margin_intuition.png"  alt="img/svm_-_large_margin_intuition.png" /></p>
+<p>SVM: large margin intuition</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-10_3" class="outline-3">
+<h3 id="sec-10_3"><span class="section-number-3">10.3</span> mathematics behind large margin classification </h3>
+<div class="outline-text-3" id="text-10_3">
+
+
+<p>
+Given column vectors \(u = [u_1,u_2]^T\), \(v = [v_1,v_2]^T\), the norm
+\(||u|| = \sqrt{u_1^2 +u_2^2}\), and \(u^Tv = p ||u|| = u_1v_1 +u_2v_2\),
+where p is the signed length of the projection of v onto u. (For a
+proof, draw a parallelgram with sides \(\vec{a}\) and \(\vec{b}\), then
+calculate the length of \(\vec{a}+\vec{b}\) using pythagores's theorem as
+a function of the two lengths).
+</p>
+<p>
+Simplification: &theta;<sub>0</sub> = 0, n = 2.
+Objective function is \(\min_{\theta} \tfrac{1}{2} \sum_{j=1}^n
+\theta_j^2 = \min_{\theta} \tfrac{1}{2} ||\theta||^2\) such that
+\(\theta^T x^{(i)} \geq 1\) if \(y^{(i)} = 1\), and \(\leq 1\) else.
+</p>
+<p>
+\(\theta^T x^{(i)} = p^{(i)} ||\theta||\), where \(p^{(i)}\) is the
+scalar projection of \(x^{i}\) onto \(\theta\). That means we can rewrite
+the problem as
+\[
+     \min_{\theta} \tfrac{1}{2} ||\theta||^2 \text{st}\
+\begin{cases}
+    p^{(i)} ||\theta|| \geq 1 & \text{if}\ y^{(i)} = 1\\
+    p^{(i)} ||\theta|| \leq 1 & \text{if}\ y^{(i)} = 0
+\end{cases}
+\]
+(so the simplification is that the decision boundary passes through the origin).
+</p>
+<p>
+(even for non-linearly separatable problems, you still want to choose
+the largest margin in sum).
+</p>
+
+<div class="figure">
+<p><img src="img/svm_decision_boundary_good_vs_bad.png"  alt="img/svm_decision_boundary_good_vs_bad.png" /></p>
+<p>SVM decision boundary: good vs. bad</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-10_4" class="outline-3">
+<h3 id="sec-10_4"><span class="section-number-3">10.4</span> kernels I </h3>
+<div class="outline-text-3" id="text-10_4">
+
+
+<p>
+Using a hypothesis \(\theta_0 +\sum_i \theta_i f_i\), where \(f_i\) are
+features, can be expensive if the features are higher-order polynomials.
+</p>
+<p>
+Given x, one could compute a feature by similarity of x to a landmark
+\[
+  f_1 = \text{similarity_{aka "kernel"}}(x,l^{(1)}) 
+= k(x,l^{(1)})
+= \exp \left(-\frac{1}{2\sigma^2}\cdot ||x -l^{(i)}||^2\right)
+\]
+which is a gaussian kernel.
+</p>
+<p>
+if \(x \approx l^{(1)}\), \(f_1 \approx 1\), and 
+if x is far from \(l^{(1)}\), \(f_1 \approx 0\).
+</p>
+<p>
+So if x is close to \(l^{(1)}\), but far from the others, the decision
+might become, predict 1 if \(\theta_0 +\theta_1 f_1 + \approx 0 + \approx
+0 \geq 0\). The net effect is that for x near <em>any</em> landmark, predict "1",
+and for x far away from <em>all</em> landmarks, predict "0". Thus the kernels
+summed together form the region (it can be irregular because one is
+summing various Gaussians).
+</p>
+
+<div class="figure">
+<p><img src="img/svm_-_kernel_sum_defines_boundary.png"  alt="img/svm_-_kernel_sum_defines_boundary.png" /></p>
+<p>The sum of kernels (two Gaussians in this case) defines a boundary</p>
+</div>
+
+<p>
+how to get landmarks? any other kernel types?
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10_5" class="outline-3">
+<h3 id="sec-10_5"><span class="section-number-3">10.5</span> kernels II </h3>
+<div class="outline-text-3" id="text-10_5">
+
+
+<p>
+how to get landmarks?
+Given data set, set \(l^{(i)} = x^{(i)}\).
+Given example x, let \(f_i = k(x,l^{(i)})\), \(i = 1,\dots,m\), and group
+into a feature vector f, and for a training example \((x^{(i)},y^{(i)})\),
+group into \(f^{(i)}\) and let \(f_0^{(i)} = 1\).
+</p>
+<p>
+With an already learnt \(\theta\), given \(x\), compute \(f \in
+\mathbb{R}^{m+1}\), and predict \(y=1\) if \(\theta^T f \geq 0\).
+</p>
+<p>
+training:
+\[
+    \min_{\theta} C \sum_{i=1}^m y^{(i)} \text{cost}_1(\theta^T f^{(i)}) + (1 -y^{(i)})\text{cost}_0 (\theta^T f^{(i)}) + \frac{1}{2} \sum_{j=1}^m \theta_j^2
+\]
+(note that: \(\sum_{j=1}^n \theta_j^2 = \theta^T \theta\) (ignoring
+&theta;<sub>0</sub> because we don't regularize it)).
+</p>
+<p>
+Recall that \(C (= \tfrac{1}{\lambda})\). When it was \(\lambda\), small
+values gives low bias and high variance, and vice versa.
+Another parameter to choose is \(\sigma^2\). If \(\sigma^2\) is large,
+features \(f_i\) vary more smoothly (higher bias, lower variance).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-10_6" class="outline-3">
+<h3 id="sec-10_6"><span class="section-number-3">10.6</span> using a SVM </h3>
+<div class="outline-text-3" id="text-10_6">
+
+
+<p>
+need to choose C and kernel.
+</p>
+<p>
+A "linear kernel" (ie. no kernel), predicts \(y=1\) if \(\theta^T x \geq
+0\).  Use this when n is large, and m (# training examples) is small
+(want to avoid overfitting).
+</p>
+<p>
+For a Gaussian kernel, need to choose \(\sigma^2\). Use when n small,
+and/or m is large. (don't forget to do feature scaling, otherwise units
+with large numbers will dominate \(||x -l||^2\)).
+</p>
+<p>
+Not all similarity functions make valid kernels. they need to satisfy
+"Mercer's theorem" to make sure SVM packages' optimizations run
+correctly, and do not diverge.
+</p>
+<p>
+other kernels
+</p><ul>
+<li>
+polynomial: k(x,l) = (x<sup>T</sup> l +c)<sup>k</sup> (not used much)
+</li>
+<li>
+esoteric: string, chi-square, histogram, intersection, etc.
+
+</li>
+</ul>
+
+
+
+
+<p>
+For multiclass, use the package, or use one-vs-all, where you train k
+SVMs, one to distinguish y=i from the rest, \(i=1,\dots,K\), and get
+\(\theta^{(1)},\dots,\theta^{(K)}\), then pick class i with largest
+\((\theta^{(i)})^T x\).  (note though, "these are not very elegant
+approaches to solving multiclass problems. A better alternative is
+provided by the construction of multiclass SVMs" (<a href="http://nlp.stanford.edu/IR-book/html/htmledition/multiclass-svms-1.html">src</a>)).
+</p>
+
+</div>
+
+<div id="outline-container-10_6_1" class="outline-4">
+<h4 id="sec-10_6_1"><span class="section-number-4">10.6.1</span> when to use SVM over logistic regression </h4>
+<div class="outline-text-4" id="text-10_6_1">
+
+
+<p>
+(n is #features, m is #training examples)
+</p>
+<p>
+if n is large (relative to m), use logistic regression, or SVM without a
+kernel ("linear kernel").
+</p>
+<p>
+if n is small, m is intermediate (ex. n=1 to 1000, m=10 to 10k), use SVM
+with gaussian kernel.
+</p>
+<p>
+if n is small, m is large, create/add more features, then use logistic
+regression or SVM without a kernel (linear kernel).
+</p>
+<p>
+NN likely to work well for most of these settings, but might be slower to train.
+(more general applicability, but at the cost of not being able to apply
+more specialized knowledge or use more info?)
+</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> clustering </h2>
+<div class="outline-text-2" id="text-11">
+
+
+</div>
+
+<div id="outline-container-11_1" class="outline-3">
+<h3 id="sec-11_1"><span class="section-number-3">11.1</span> unsupervised learning - introduction </h3>
+<div class="outline-text-3" id="text-11_1">
+
+
+<p>
+Unlike supervised learning, no labels given.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-11_2" class="outline-3">
+<h3 id="sec-11_2"><span class="section-number-3">11.2</span> k-means </h3>
+<div class="outline-text-3" id="text-11_2">
+
+
+<p>
+with input K and training set \(\{x^{(i)}\}_{i=1}^m\), where \(x^{(i)} \in \mathbb{R}^n\)
+</p><ul>
+<li>
+rand init K cluster centroids
+</li>
+<li>
+cluster assignment: assign \(c^{(i)}\) to the index of cluster centroid closest to \(x^{(i)}\)
+</li>
+<li>
+move centroid: assign \(\mu_k\) to the average of points assigned to cluster k
+<ul>
+<li>
+eliminate a centroid if no points assigments, or randomly reinitalize
+</li>
+</ul>
+</li>
+<li>
+repeat until centroid movement small or assignments don't change much
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-11_3" class="outline-3">
+<h3 id="sec-11_3"><span class="section-number-3">11.3</span> optimization objective </h3>
+<div class="outline-text-3" id="text-11_3">
+
+
+<p>
+Let \(\mu_{c^{(i)}}\) be the cluster centroid of cluster to which example
+\(x^{(i)}\) has been assigned. The optimization objective (or distortion function) is
+\[
+    J(c^{(1)},\dots,c^{(m)},\mu_1,\dots,\mu_K) = \frac{1}{m}\sum_{i=1}^m || x^{(i)} - \mu_{c^{(i)}} ||^2
+\]
+So k-means minimizes wrt c (with &mu; fixed), then wrt &mu; with c fixed.
+</p>
+<p>
+(not possible for J to sometimes increase?)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-11_4" class="outline-3">
+<h3 id="sec-11_4"><span class="section-number-3">11.4</span> random initialization </h3>
+<div class="outline-text-3" id="text-11_4">
+
+
+<p>
+Should have \(K \lt m\). Randomly pick K training examples, set
+\(\mu_1,\dots,\mu_K\) equal to these K examples (but make sure they don't overlap).
+</p>
+<p>
+(Why wrt existing examples, and not the entire space? …)
+</p>
+<p>
+To more like get closer to the global optima, run k-means 50 to 1000
+times, then pick run where clusters give lowest J.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-11_5" class="outline-3">
+<h3 id="sec-11_5"><span class="section-number-3">11.5</span> choosing the number of clusters </h3>
+<div class="outline-text-3" id="text-11_5">
+
+
+<p>
+most common is to choose k by hand.
+</p>
+<p>
+(underdetermined, or ambiguous what to choose?)
+</p>
+<p>
+elbow method: vary K and compute J for each K. Choose K where the
+"elbow" appears (where the distortion goes down "fast", then goes down
+"slow"). problem: curve often ambiguous.
+</p>
+<p>
+Often k-means is run to get clusters for some later/downstream
+purpose. So eval k-means based on a metric for how well it performs for
+that later purpose.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> dimensionality reduction </h2>
+<div class="outline-text-2" id="text-12">
+
+
+</div>
+
+<div id="outline-container-12_1" class="outline-3">
+<h3 id="sec-12_1"><span class="section-number-3">12.1</span> motivation </h3>
+<div class="outline-text-3" id="text-12_1">
+
+
+<p>
+Dimensionality reduction can reduce memory requirements, and make
+learning algorithms run faster. Furthermore, one might lose track of
+features (due to many teams), so some features might be highly
+redundant, and this method would automatically remove that redundancy.
+Furthermore, it helps visualize higher dimensional data.
+</p>
+
+<div class="figure">
+<p><img src="img/projecting_for_compression_from_2d_to_1d.png"  alt="img/projecting_for_compression_from_2d_to_1d.png" /></p>
+<p>Projecting for compression from 2D to 1D, $x<sup>(1)</sup> &isin; \mathbb{R}<sup>2</sup> &rarr; z<sup>(1)</sup> &isin; \mathbb{R}$</p>
+</div>
+
+<p>
+One problem however is that in dimensionality reduction, the new \(z_i\)
+dimensions don't automatically have a meaning assigned.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-12_2" class="outline-3">
+<h3 id="sec-12_2"><span class="section-number-3">12.2</span> PCA: problem formulation </h3>
+<div class="outline-text-3" id="text-12_2">
+
+
+<p>
+Note, first do mean normalization and feature scailing.
+</p>
+<p>
+In PCA, it tries to find a direction onto which to project the data so
+to minimize projection errror (distance from point to projection
+surface). More formally, it projects onto a linear subspace spanned by
+\(u^{(1)}\) to \(u^{(k)}\).
+</p>
+<p>
+How does PCA relate to linear regression? In linear regression, it
+minimizes sums of squares (vertical distance from point to \(x_1\)), while
+with PCA, it is the orthogonal distance to the line. Furthermore, in
+lienar regression, it uses x to predict y, but in PCA, there is no
+distinguished feature (all are treated the same).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-12_3" class="outline-3">
+<h3 id="sec-12_3"><span class="section-number-3">12.3</span> PCA: algorithm </h3>
+<div class="outline-text-3" id="text-12_3">
+
+
+<p>
+input set: \(\{x^{(i)}\}_{i=1}^m\).
+</p>
+<p>
+pre-processing: feature scaling and mean normalization
+</p>
+<p>
+algorithm:
+</p><ul>
+<li>
+compute the covariance matrix \(\Sigma = \tfrac{1}{m} \sum_{i=1}^n
+  (x^{(i)})(x^{(i)})^T = \tfrac{1}{m} X^T X\)
+<ul>
+<li>
+has nice properties
+</li>
+</ul>
+</li>
+<li>
+compute eigenvalues of matrix \(\Sigma\)
+<ul>
+<li>
+<code>[U,S,V] = svd(Sigma)</code> (singular value decomposition), which is
+somewhat more stable than <code>eig</code>)
+</li>
+</ul>
+</li>
+<li>
+\(U = [u^{1} \dots u^{(n)}]\) (as column vectors), and take first k
+columns, called \(U_{\text{reduce}}\)
+</li>
+<li>
+\(z = U_{\text{reduce}}^T \vec{x}\)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-12_4" class="outline-3">
+<h3 id="sec-12_4"><span class="section-number-3">12.4</span> Choosing the number of principle components </h3>
+<div class="outline-text-3" id="text-12_4">
+
+
+<p>
+It tries to minimize the average squared projection error
+\[
+  \frac{1}{m} \sum_{i=1}^m ||x^{(i)} -x_{\text{approx}}^{(i)}||^2
+\]
+The total variation in the data is \(\tfrac{1}{m} \sum_{i=1}^m ||x^{(i)}
+-0||^2\), how far each is from the origin.
+</p>
+<p>
+Typically to choose k, select k to be the smallest value such that ratio
+of average squared projection error over total variation is less than
+&epsilon; (ie. "(1- &epsilon;) of variance is retained").
+</p>
+<p>
+How to choose k? One (bad) way is to start with k =1, then check if the
+ratio less than 0.01, and increment k if not. This way is
+inefficient. Instead, a better way is, because \(S\) is diagonal
+(<code>diag(s_{11},\dots,s_{nn})</code>), for given a k, compute
+\(1 -(\sum_{i=1}^k s_{ii}/\sum_{i=1}^n s_{ii})\).
+</p>
+<p>
+(there's another formulation that looks at eigenvalues and whatnot).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-12_5" class="outline-3">
+<h3 id="sec-12_5"><span class="section-number-3">12.5</span> Reconstruction from compressed representations </h3>
+<div class="outline-text-3" id="text-12_5">
+
+
+<p>
+To recover the original data (aka. reconstruction), do
+\(x_{\text{approx}}^{(i)} = U_{\text{reduce}} z^{(i)}\).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-12_6" class="outline-3">
+<h3 id="sec-12_6"><span class="section-number-3">12.6</span> Advice for applying PCA </h3>
+<div class="outline-text-3" id="text-12_6">
+
+
+<p>
+Supervised learning speedup:
+From the training set, run PCA on the examples without the labels, then
+use this new training set instead.
+</p>
+<p>
+Note, the mapping \(x^{(i)} \to z^{(i)}\) should be defined only by
+running PCA on the training set. The mapping can then be applied to the
+examples in the cv and test sets.
+</p>
+<p>
+(PCA useful for compression or visualization)
+</p>
+<p>
+Bad use of PCA: to prevent overfitting: use \(z^{(i)}\) instead of
+\(x^{(i)}\) to reduce the number of features to k &lt; n, because with fewer
+features, it less likely to overfit.  The problem is that it might work
+OK, but you're throwing info, so use regularization instead, which will
+give at least as good an answer.
+</p>
+<p>
+Another bad use of PCA is in the design of a ML system. Get training
+set, reduce with PCA, train logreg on the result, then test on the test
+set with the map.
+Instead, before using PCA, ask what happens if we do this without PCA?
+See if \(x^{(i)}\) works, and if it doesn't, then use PCA and \(z^{(i)}\).
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> anomaly detection </h2>
+<div class="outline-text-2" id="text-13">
+
+
+</div>
+
+<div id="outline-container-13_1" class="outline-3">
+<h3 id="sec-13_1"><span class="section-number-3">13.1</span> problem motivation </h3>
+<div class="outline-text-3" id="text-13_1">
+
+
+<p>
+Given \(\{x^{(i)}\}_{i=1}^m\) (assume non-anomalous), is \(x_{\text{test}}\)
+anomalous? Build a model p(x), and if \(p(x_{\text{test}}) \lt \epsilon\),
+flag as an anomaly.
+</p>
+
+<div class="figure">
+<p><img src="img/anomaly_detection_-_yes_or_no.png"  alt="img/anomaly_detection_-_yes_or_no.png" /></p>
+<p>Anomaly detection example</p>
+</div>
+
+<p>
+(sort of like a significance test when using a hard threshold)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-13_2" class="outline-3">
+<h3 id="sec-13_2"><span class="section-number-3">13.2</span> algorithm </h3>
+<div class="outline-text-3" id="text-13_2">
+
+
+<p>
+(Density estimation) Given \(\{x^{(i)}\}_{i=1}^m\) where \(x \in \mathbb{R}^n\), model
+\[
+    p(x)
+= p(x_1; \mu_1, \sigma_1^2)p(x_2; \mu_2, \sigma_2^2) \cdots p(x_n; \mu_n, \sigma_n^2)
+= \prod_{j=1}^n p(x_j; \mu_j, \sigma_j^2)
+\]
+\(x_1 \sim N(\mu_1,\sigma_1^2)\). This model corresponds to a independence
+assumption of \(x_1\) to \(x_n\) (though it works ok even without that
+assumption).
+</p>
+<p>
+algorithm
+</p><ul>
+<li>
+choose features \(x_i\) indicative of anomalous examples (ie. will take
+unusually small/large values for an anomaly).
+</li>
+<li>
+fit parameters \(\mu_1,\dots,\mu_n\), \(\sigma_1^2,\dots,\sigma_n^2\) to
+training set where
+\(\mu_j = \tfrac{1}{m} \sum_{i=1}^m x_j^{(i)}\) and \(\sigma_j^2 =
+  \tfrac{1}{m} \sum_{i=1}^m (x_j^{(i)} -\mu_j)^2\)
+</li>
+<li>
+given example \(x\), compute \(p(x)\) where
+</li>
+</ul>
+
+
+\[
+p(x)
+= \prod_{j=1}^n p(x_j; \mu_j, \sigma_j^2)
+= \prod_{j=1}^n \frac{1}{\sqrt{2\pi\sigma_j^2}} \exp\left(\frac{-(x_j -\mu_j)^2}{2\sigma_j^2}\right)
+\]
+<ul>
+<li>
+anomaly if \(p(x) \lt \epsilon\)
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-13_3" class="outline-3">
+<h3 id="sec-13_3"><span class="section-number-3">13.3</span> developing and evaluating an anomaly detection system </h3>
+<div class="outline-text-3" id="text-13_3">
+
+
+<p>
+Assume we have some labeled data. Have a training set with non-anomalous
+examples (though if a few errors slip in, it is ok). Then define a cv
+and test set (should use different examples for each).
+</p>
+<p>
+Fit \(p(x)\) on training set \(\{x^{(i)}\}_{i=1}^m\). On a cv/test example,
+predict \(y = 1[p(x) \lt \epsilon]\). Since y=0 is much more common
+(see <a href="#sec-9_3">error metrics for skewed classes</a>), classification accuracy is not
+good. Instead, use TP, FP, FN, TN, precision/recall, or \(F_1\) score.
+(Can also use cv set to choose parameter \(\epsilon\)).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-13_4" class="outline-3">
+<h3 id="sec-13_4"><span class="section-number-3">13.4</span> anomaly detection vs. supervised learning </h3>
+<div class="outline-text-3" id="text-13_4">
+
+
+<p>
+anomaly detection
+</p><ul>
+<li>
+very small number of positives (0-20 is common)
+</li>
+<li>
+large number of negative examples
+</li>
+<li>
+many different "types" of anomalies. Hard for any algorithm to learn
+from positive examples what the anomaly looks like; future anomalies
+might look nothing like any of the existing anomalous examples
+</li>
+<li>
+ex. fraud detection, manufacturing (ex. aircraft engines), monitoring
+machines in a data center. (though if you are large enough, each of
+these can become a supervised learning problem (and presumably, if the
+positive examples dry up, it becomes an anomaly detection problem)).
+</li>
+</ul>
+
+
+<p>
+supervised learning
+</p><ul>
+<li>
+large number of positive and negative examples
+</li>
+<li>
+enough positives examples for algorithms to get a sense of what
+positives examples look like, future positive examples likely to be
+similar to ones in training set
+</li>
+<li>
+email spam classification, weather prediction (sunny/rainy/etc.),
+cancer classification
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-13_5" class="outline-3">
+<h3 id="sec-13_5"><span class="section-number-3">13.5</span> choosing what features to use </h3>
+<div class="outline-text-3" id="text-13_5">
+
+
+<p>
+for non-Gaussian features, try a transformation.
+</p>
+
+</div>
+
+<div id="outline-container-13_5_1" class="outline-4">
+<h4 id="sec-13_5_1"><span class="section-number-4">13.5.1</span> error analysis </h4>
+<div class="outline-text-4" id="text-13_5_1">
+
+
+<p>
+want \(p(x)\) large for non-anomalous examples \(x\), and \(p(x)\) small
+otherwise.
+</p>
+<p>
+most common problem, \(p(x)\) is comparable for non-anomalous and
+anomalous examples.
+</p>
+<p>
+choose features that take on unusually large or small values in the
+event of an anomaly.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13_6" class="outline-3">
+<h3 id="sec-13_6"><span class="section-number-3">13.6</span> multivariate Gaussian distribution </h3>
+<div class="outline-text-3" id="text-13_6">
+
+
+<p>
+If we look at each feature individually they may fall within acceptable
+limits. Instead, model all at once.
+</p>
+<div class="figure">
+<p><img src="img/anomaly_detection_-_correlated_features.png"  alt="img/anomaly_detection_-_correlated_features.png" /></p>
+<p>An anomaly only detectable by two features simulatenously</p>
+</div>
+
+
+<div class="figure">
+<p><img src="img/anomaly_detection_-_why_mvn_for_correlated_features.png"  alt="img/anomaly_detection_-_why_mvn_for_correlated_features.png" /></p>
+<p>Two correlated features treated independently uses the circle (magenta), while taken together it uses covariance (blue)</p>
+</div>
+
+
+
+\[
+    p(x;\mu,\Sigma) =
+\frac{1}{\sqrt{(2\pi)^n |\Sigma|}}
+\exp \left( -1/2 (x -\mu)^T \Sigma^{-1} (x -\mu) \right)
+\]
+
+<p>
+In \(\Sigma\), each diagonal corresponds to the variance of that feature
+in row \(i\). Each off-diagonal corresponds to the covariance in row i and
+column j. When the covariance is zero, a mesh plot shows a circle; the
+data for these two are "scattered". The closer it is to 1, the more one
+would see a "line" (x and y start to grow together).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-13_7" class="outline-3">
+<h3 id="sec-13_7"><span class="section-number-3">13.7</span> applying multivariate Gaussian distribution to anomaly detection </h3>
+<div class="outline-text-3" id="text-13_7">
+
+
+<p>
+Use \(\mu\) and \(\Sigma\), and plug into the MVN, then flag as an anomaly
+when \(p(x) \lt \epsilon\).
+</p>
+<p>
+How does the product model relate from the MVN? It corresponds to the
+MVN where ellipses are axis-aligned (ie. no rotation, ie. no covariance).
+</p>
+<p>
+The original model is computationally cheaper (doesn't have to compute
+\(\Sigma^{-1}\), but the MVN automatically captures correlations between
+features). Original model OK even if m (training set size) is small,
+while MVN requires \(m \gt n\) (use \(m \geq 10n\) in practice), or else
+\(\Sigma\) is singular (second case is when there are redundant features
+(ie. linearly dependent), such as \(x_1 = x_2\), or \(x_3 = x_4 +x_5\)).
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> recommender systems </h2>
+<div class="outline-text-2" id="text-14">
+
+
+</div>
+
+<div id="outline-container-14_1" class="outline-3">
+<h3 id="sec-14_1"><span class="section-number-3">14.1</span> problem formulation </h3>
+<div class="outline-text-3" id="text-14_1">
+
+
+<p>
+Let \(n_u\) be the number of users, and \(n_m\) the number of movies.  Set
+\(r(i,j)\) to 1 if user j has rated movie i.  \(y^{(i,j)}\) is the rating
+given by user j to movie i (defined only if \(r(i,j)=1\)).
+</p>
+<p>
+Predict missing movies.
+</p>
+<p>
+(sees a lot like a missing data problem, or something related to work
+on imputation)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-14_2" class="outline-3">
+<h3 id="sec-14_2"><span class="section-number-3">14.2</span> content-based recommendations </h3>
+<div class="outline-text-3" id="text-14_2">
+
+
+
+<p>
+(note that \(n\) is the number of features not counting \(x_0\)).
+</p>
+<p>
+For each user j, learn \(\theta^{(j)} \in \mathbb{R}^{n+1}\). Predict user
+j as rating movie i with \((\theta^{(j)})^T x^{(i)}\).
+</p>
+<p>
+\(\theta^{(j)}\) is the parameter vector for user \(j\), \(x^{(i)}\) is a feature
+vector for movie i. \(m^{(j)}\) is number of movies rated by user j. The
+optimization objective is
+\[
+    \min_{\theta^{(j)}} \frac{1}{2m^{(j)}} \sum_{i:r(i,j)=1} ((\theta^{(j)})^T(x^{(i)}) -y^{(i,j)})^2 +\frac{\lambda}{2m^{(j)}}\sum_{k=1}^n (\theta_k^{(j)})^2
+\]
+For multiple parameters \(\theta^{(1)},\dots,\theta^{(n_u)}\) (ie. for
+multiple users)
+\[
+    \min_{\theta^{(1)},\dots,\theta^{(n_u)}} \frac{1}{2} \sum_{j=1}^{n_u} \sum_{i:r(i,j)=1} ((\theta^{(j)})^T(x^{(i)}) -y^{(i,j)})^2 +\frac{\lambda}{2}\sum_{j=1}^{n_u}\sum_{k=1}^n (\theta_k^{(j)})^2
+\]
+
+Gradient descent update is
+\[
+    \theta_k^{(j)} := \theta_{k}^{(j)} -\alpha\left( \sum_{i:r(i,j)=1} ((\theta^{(j)})^Tx^{(i)} -y^{(i,j)})x_k^{(i)} +\lambda \theta_k^{(j)} \right)\ k\ne0
+\]
+and similarly for \(x_k^{(i)}\). (drop the regularization term when \(k=0\)).
+</p>
+<p>
+One problem with this approach is that it might be hard or expensive to
+get features for <em>all</em> products. (In addition, there might be many users with
+many missing ratings).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-14_3" class="outline-3">
+<h3 id="sec-14_3"><span class="section-number-3">14.3</span> collaborative filtering </h3>
+<div class="outline-text-3" id="text-14_3">
+
+
+<p>
+Here we don't have \(x^{(j)}\), but \(\theta^{(i)}\) for each user.
+</p>
+<p>
+Given \(\theta^{(1)},\dots,\theta^{(n_u)}\), learn \(x^{(i)}\)
+\[
+    \min_{x^{(i)}}\frac{1}{2}\sum_{j:r(i,j)=1} ((\theta^{(j)})^Tx^{(i)} -y^{(i,j)})^2 +\frac{\lambda}{2}\sum_{k=1}^n (x_k^{(i)})^2
+\]
+
+For multiple features, given \(\theta^{(1)},\dots,\theta^{(n_u)}\), learn \(x^{(1)},\dots,x^{(n_m)}\)
+\[
+    \min_{x^{(1)},\dots,x^{(n_u)}} \frac{1}{2} \sum_{j=1}^{n_m} \sum_{i:r(i,j)=1} ((\theta^{(j)})^T(x^{(i)}) -y^{(i,j)})^2 +\frac{\lambda}{2}\sum_{j=1}^{n_m}\sum_{k=1}^n (\theta_k^{(j)})^2
+\]
+
+Note that for this chicken and egg problem (does \(x\) or \(\theta\) come
+first), one can randomly guess \(\theta \to x \to \theta \to x \to \dots\).
+(requires some users' rating, and movies being rated)
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-14_4" class="outline-3">
+<h3 id="sec-14_4"><span class="section-number-3">14.4</span> collaborative filtering algorithm </h3>
+<div class="outline-text-3" id="text-14_4">
+
+
+<p>
+A more efficient algorithm to use is to minimize both simulatenously
+\[
+\min_{x^{(1)},\dots,x^{(n_m)},\theta^{(1)},\dots,\theta^{(n_u)}}
+    J(x^{(1)},\dots,x^{(n_m)},\theta^{(1)},\dots,\theta^{(n_u)})
+= \frac{1}{2} \sum_{(i,j):r(i,j)=1} ((\theta^{(j)})^Tx^{(i)} -y^{(i,j)})^2+ \frac{\lambda}{2} \sum_{i=1}^{n_m} \sum_{k=1}^n (x_k^{(i)})^2+ \frac{\lambda}{2} \sum_{j=1}^{n_u} \sum_{k=1}^n (\theta_k^{(j)})^2
+\]
+This time \(x\in\mathbb{R}^n\) (so drop the \(x_0=1\) convention). Same with \(\theta\in\mathbb{R}^n\) (we're looking at all features).
+</p>
+<p>
+Notice that we are still calculating for any given movie i and user j
+their parameters even if \(R(i,j) = 0\).
+</p>
+<ol>
+<li>
+Init \(x^{(1)},\dots,x^{(n_m)},\theta^{(1)},\dots,\theta^{(n_u)}\) to small random values
+</li>
+<li>
+Minimize \(J()\)
+</li>
+<li>
+for a user with \(\theta\) and a movie with (learned) features \(x\),
+predict a rating \(\theta^Tx\).
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-14_5" class="outline-3">
+<h3 id="sec-14_5"><span class="section-number-3">14.5</span> vectorization: low rank matrix factorization </h3>
+<div class="outline-text-3" id="text-14_5">
+
+
+<p>
+Instead of \(y^{(i,j)}\), create a matrix \(Y\). Predicted ratings is a matrix
+\((\theta^{(j)})^T(x^{(i)})\) in i,j.
+</p>
+<p>
+A simpler way to write this is to define \(X =
+[x^{(1)},\dots,x^{(n_m)}]^T\) (as rows) and \(\Theta =
+[(\theta^{(1)})^T,\dots,(\theta^{(n_u)})^T]\) (as rows).  Compute
+\(X\Theta^T\)
+
+(The algorithm is also called low rank matrix factorization)
+</p>
+
+<p>
+How to find movies j related to movie i? A similarity measure is \(||x^{(i)} -x^{(j)}||\).
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-14_6" class="outline-3">
+<h3 id="sec-14_6"><span class="section-number-3">14.6</span> implementation detail: mean normalization </h3>
+<div class="outline-text-3" id="text-14_6">
+
+
+<p>
+\(Y \leftarrow Y -\mu\) (where \(\mu\) is calculated without new user having
+no ratings)
+</p>
+<p>
+for user j on movie i, predict
+\((\theta^{(j)})^T (x^{(i)}) +\mu_i\)
+
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> large-scale machine learning </h2>
+<div class="outline-text-2" id="text-15">
+
+
+</div>
+
+<div id="outline-container-15_1" class="outline-3">
+<h3 id="sec-15_1"><span class="section-number-3">15.1</span> learning with large datasets </h3>
+<div class="outline-text-3" id="text-15_1">
+
+
+<p>
+first look at smaller samples and plot training curves to see whether
+bias is high.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-15_2" class="outline-3">
+<h3 id="sec-15_2"><span class="section-number-3">15.2</span> stochastic gradient descent </h3>
+<div class="outline-text-3" id="text-15_2">
+
+
+<p>
+in batch gradient descent, can't store all records, so would have to
+stream through and accumulate the sum. Would have to do this for each
+step.
+</p>
+
+
+\[
+\text{cost}(\theta, (x^{(i)},y^{(i)})) = 1/2 (h_{\theta}(x^{(i)}) -y^{(i)})^2
+\]
+<p>
+where
+\[
+J_{\text{train}}(\theta) = \frac{1}{m}\sum_{i=1}^m \text{cost}(\theta, (x^{(i)},y^{(i)}))
+\]
+
+</p><ol>
+<li>
+shuffle dataset
+</li>
+<li>
+repeat (1-10x)
+<ol>
+<li>
+for \(i=1,\dots,m\)
+<ol>
+<li>
+\(\theta_j := \theta_j -\alpha\frac{\partial}{\partial \theta_j} \text{cost}(\theta, (x^{(i)},y^{(i)}))\)
+</li>
+<li>
+(ie. \(\theta_j := \theta_j -\alpha (h_{\theta}(x^{(i)}) -y^{(i)})x_j^{(i)}\))
+<ul>
+<li>
+for every \(j=0,\dots,n\)
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+
+<p>
+circutoursly moves towards the minimal, then wanders around the region of the global minimal.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-15_3" class="outline-3">
+<h3 id="sec-15_3"><span class="section-number-3">15.3</span> mini-batch gradient descent </h3>
+<div class="outline-text-3" id="text-15_3">
+
+
+<p>
+in each iter
+</p><ul>
+<li>
+batch: use all m examples
+</li>
+<li>
+stochastic: use 1 example
+</li>
+<li>
+mini-batch: use b examples, where b is the batch size (typically 2-100)
+</li>
+</ul>
+
+
+<p>
+mini-batch might do better than stochastic because vectorization could allow a slight speed up.
+One disavantage is having to select b.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-15_4" class="outline-3">
+<h3 id="sec-15_4"><span class="section-number-3">15.4</span> stochastic gradient descent convergence </h3>
+<div class="outline-text-3" id="text-15_4">
+
+
+<p>
+During learning, compute \(\text{cost}(\theta, (x^{(i)},y^{(i)}))\) before
+updating \(\theta\). Every 1000 iterations (say), plot the cost averaged
+over the last 1000 examples processed by the algorithm.
+</p>
+<p>
+As 1000 is not much, the plots of num of iters vs. cost might be noisy.
+</p>
+
+<div class="figure">
+<p><img src="img/stochastic_gradient_descent_convergence_-_small_vs_large_learning_rate.png"  alt="img/stochastic_gradient_descent_convergence_-_small_vs_large_learning_rate.png" /></p>
+<p>Small vs. large learning rate</p>
+</div>
+
+
+<div class="figure">
+<p><img src="img/stochastic_gradient_descent_convergence_-_1000_vs_5000_examples.png"  alt="img/stochastic_gradient_descent_convergence_-_1000_vs_5000_examples.png" /></p>
+<p>1000 vs. 5000 examples</p>
+</div>
+
+
+<div class="figure">
+<p><img src="img/stochastic_gradient_descent_convergence_-_trend_in_noise.png"  alt="img/stochastic_gradient_descent_convergence_-_trend_in_noise.png" /></p>
+<p>More averaging required to see the thrend in noise</p>
+</div>
+
+
+<div class="figure">
+<p><img src="img/stochastic_gradient_descent_convergence_-_divergence.png"  alt="img/stochastic_gradient_descent_convergence_-_divergence.png" /></p>
+<p>Divergence when $&alpha;$ too large</p>
+</div>
+
+<p>
+As for \(\alpha\), one could slowly decrease \(\alpha\) over time if we want
+\(\theta\) to converge. That said, it might take more time to fiddle with
+the constants.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-15_5" class="outline-3">
+<h3 id="sec-15_5"><span class="section-number-3">15.5</span> online learning </h3>
+<div class="outline-text-3" id="text-15_5">
+
+
+<p>
+repeat forever
+</p><ul>
+<li>
+get (x,y) corresponding to user
+<ul>
+<li>
+update &theta; using (x,y) (one example, with no fixed training set needed to store)
+<ul>
+<li>
+\(\theta_j := \theta_j -\alpha(h_{\theta}(x) -y)x_j\), \(j=0,\dots,n\)
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p>
+This algorithm can adapt to user preferences.
+</p>
+<p>
+predicted CTR: \(p(y=1|x;\theta)\), and then use this to show the most probable.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-15_6" class="outline-3">
+<h3 id="sec-15_6"><span class="section-number-3">15.6</span> map/reduce and data parallelism </h3>
+<div class="outline-text-3" id="text-15_6">
+
+
+<p>
+Can the algorithm be expressed as computing the sums of functions of the
+training set? Most can.
+</p>
+
+<div class="figure">
+<p><img src="img/map_reduce_with_batch_gradient_descent.png"  alt="img/map_reduce_with_batch_gradient_descent.png" /></p>
+<p>map/reduce with batch gradient descent</p>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> application example: photo OCR </h2>
+<div class="outline-text-2" id="text-16">
+
+
+</div>
+
+<div id="outline-container-16_1" class="outline-3">
+<h3 id="sec-16_1"><span class="section-number-3">16.1</span> problem description and pipeline </h3>
+<div class="outline-text-3" id="text-16_1">
+
+
+<p>
+pipeline
+</p><ul>
+<li>
+text detection
+</li>
+<li>
+character segmentation
+</li>
+<li>
+character classification
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-16_2" class="outline-3">
+<h3 id="sec-16_2"><span class="section-number-3">16.2</span> sliding windows </h3>
+<div class="outline-text-3" id="text-16_2">
+
+
+<p>
+pedestrian detection a bit easier because aspect ratio mostly the same,
+compared to text detection.
+</p>
+<ul>
+<li>
+select an aspect ratio.
+</li>
+<li>
+collect positive and negative examples (ex. pictures of people, and
+pictures of something other than people)
+</li>
+<li>
+then run image patch across the image, sliding it over a bit by the
+step size (or <em>stride</em>) each time
+</li>
+<li>
+then use a larger image patch, resizing it to same size as those used
+in the classifier
+</li>
+<li>
+The result is a grayscale that shows the "1" and "0".
+</li>
+<li>
+then apply an expansion algorithm (for every pixel, is it within some
+distance of a white pixel? If so, also colour it white)
+</li>
+</ul>
+
+
+<p>
+character segmentation
+</p><ul>
+<li>
+positives are splits between two characters
+</li>
+<li>
+negatives are whole characters or blanks for the given aspect ratio
+</li>
+<li>
+use a 1D sliding window on the rectangle of text
+</li>
+</ul>
+
+
+
+<div class="figure">
+<p><img src="img/photo_ocr_-_pipeline_-_grayscale_and_expansion.png"  alt="img/photo_ocr_-_pipeline_-_grayscale_and_expansion.png" /></p>
+<p>Photo OCR pipeline: From photo, to pos/neg grayscale, to expansion</p>
+</div>
+
+</div>
+
+</div>
+
+<div id="outline-container-16_3" class="outline-3">
+<h3 id="sec-16_3"><span class="section-number-3">16.3</span> getting lots of data: artificial data synthesis </h3>
+<div class="outline-text-3" id="text-16_3">
+
+
+<p>
+create new data, or amplify an existing data set
+</p>
+<p>
+how to amplify?
+</p><ul>
+<li>
+modern computers have a large font library. so take a font, and paste
+against a random background, then distort a bit
+</li>
+</ul>
+
+
+<p>
+synthesize data by introduction distortions. ex. "A", and warp the
+letter. ex. audio, mixed in with bad connections, crowd, machineries, etc..
+</p>
+<p>
+note, the distortion should be representative of the type of
+noise/distortions in the test set. Usually it does not help to add
+purely random/meaningless noise. (ex. "A" and adding Gaussian noise).
+</p>
+<p>
+note, before creating synthetic data, check the learn curves, or
+increase the number of features, or hidden units in a NN.
+</p>
+<p>
+q: How much work would it be to get 10x as much data as we current have?
+Do a quick estimate.
+</p>
+<p>
+in addition to data synthesis, DIY collecting/labelling, there is crowd
+sourcing.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-16_4" class="outline-3">
+<h3 id="sec-16_4"><span class="section-number-3">16.4</span> ceiling analysis: what part of the pipeline to work on next </h3>
+<div class="outline-text-3" id="text-16_4">
+
+
+<p>
+Which part of the pipeline should you spend the most time trying to improve?
+</p>
+<ul>
+<li>
+imagine for character accuracy, a single real number, the overall system has 72% accuracy.
+</li>
+<li>
+then simulate in one part 100% accuracy. What then is overall system accuracy?
+</li>
+<li>
+then do this for each next stage until all parts downstream are simulated as perfectly accurate
+</li>
+</ul>
+
+
+<p>
+ex. [72, 89, 90, 100]. Take the difference between parts, [17, 1, 10],
+suggesting maybe you don't want to work on part number 2.
+</p>
+<p>
+In other words, how much could you gain if one part was made perfect?
+</p>
+</div>
+</div>
+</div>
+<div id="postamble">
+<p class="date"> Date: 2013-04-05 21:31:53 EDT</p>
+<p class="creator">HTML generated by org-mode 7.4 in emacs 24</p>
+</div>
+</div>
+</body>
+</html>
